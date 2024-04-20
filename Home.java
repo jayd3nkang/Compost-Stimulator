@@ -13,7 +13,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.IOException;
 
-class Home extends JPanel{
+class Home extends Main{
   static JFrame frame;
   JButton button = new JButton();
   int rColor = 10;
