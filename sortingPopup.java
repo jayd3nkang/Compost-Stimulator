@@ -9,9 +9,10 @@ import java.awt.Image;
 
 public class sortingPopup extends Main{
     static JFrame frame;
+    Item[] list;
   JButton button = new JButton();
   public sortingPopup(){
-    this.setPreferredSize(new Dimension(1000,1000));
+    this.setPreferredSize(new Dimension(300,300));
     Thread main = new Thread(new myRunnable());
     main.start();
   }
@@ -34,7 +35,7 @@ public class sortingPopup extends Main{
   }
 
   public void paintComponent(Graphics g){
-    
+
   }
 
 }
