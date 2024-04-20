@@ -1,17 +1,11 @@
-//import javax.swing.JPanel;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Dimension;
-// import java.net.URL;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.io.IOException;
 
 class Home extends Main{
   static JFrame frame;
@@ -53,17 +47,7 @@ class Home extends Main{
     counter = 0;
   }
 //setting up the canvas 
-  public static void main(String[] args){
-    Home ex = new Home();
-    frame = new JFrame("New");
-    frame.setContentPane(ex);
-    frame.pack();
-    frame.setVisible(true);
-
-    //System.out.println("BEFORE: " + ex.changeDay);
-    ex.changeDay = true;
-    //System.out.println("AFTER: " + ex.changeDay);
-  }
+  
 
   //drawing the components that need to be drawn
   public void paintComponent(Graphics g){
@@ -80,7 +64,6 @@ class Home extends Main{
     g.drawImage(iconHouse,0,0,this);
     g.drawImage(iconSun, 100,100,this);
 
-    //System.out.println("PLS WORK");
 
   }
 
@@ -96,6 +79,7 @@ class Home extends Main{
     }
     counter++;
 
+    //this is the mechanics that indicates that day to night cycle has ended 
     if(counter > 68){
       changeDay = false;
       changeNight = true;
@@ -117,6 +101,8 @@ class Home extends Main{
       this.bColor-=3;
     }
 
+
+    //this is the mechanics that indicates that night to day cycle has ended 
     if(counter > 68){
       changeNight = false;
       changeDay = true;
