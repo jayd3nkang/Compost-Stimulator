@@ -7,7 +7,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 
-class Home extends JPanel{
+class Home extends Main{
   static JFrame frame;
   JButton button = new JButton();
   int rColor = 10;
