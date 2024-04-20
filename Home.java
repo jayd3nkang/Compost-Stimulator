@@ -13,6 +13,8 @@ class Home extends JPanel{
   int rColor = 10;
   int gColor = 33;
   int bColor = 42;
+  int xSun;
+  int ySun;
   boolean changeDay;
   boolean changeNight;
   static int counter;
@@ -25,7 +27,7 @@ class Home extends JPanel{
       while(true){
         //System.out.println("qwerqwerqwerqwer");
         dayToNight();
-        nightToDay();
+        //nightToDay();
         repaint();
         try{
           Thread.sleep(100);
@@ -45,9 +47,10 @@ class Home extends JPanel{
     changeDay = false;
     changeNight = false;
     counter = 0;
+    xSun = -175;
+    ySun = 200;
   }
 //setting up the canvas 
-  
 
   //drawing the components that need to be drawn
   public void paintComponent(Graphics g){
@@ -62,8 +65,7 @@ class Home extends JPanel{
     Image iconHouse = housePic.getImage();
    
     g.drawImage(iconHouse,0,0,this);
-    g.drawImage(iconSun, 100,100,this);
-
+    g.drawImage(iconSun, xSun,ySun,this);
 
   }
 
@@ -73,21 +75,23 @@ class Home extends JPanel{
     //only if it is already day(hence !changeNight) and 
     //the user wants to day (hence the changeDay)
     if(!changeNight && changeDay){
-      this.rColor+=3;
-      this.gColor+=3;
-      this.bColor+=3;
+      this.rColor+=2;
+      this.gColor+=2;
+      this.bColor+=2;
+
+      xSun += 8;
+      ySun -= 3;
+
     }
     counter++;
+    System.out.println(counter);
 
     //this is the mechanics that indicates that day to night cycle has ended 
-    if(counter > 68){
+    if(counter > 75){
       changeDay = false;
       changeNight = true;
       counter = 0;
-      //System.out.println("THE IF STATEMENT IS WORKING");
-      //System.exit(1);
     }
-    //System.out.println("hello");
   }
 
   //method that changes from night to day
@@ -96,14 +100,18 @@ class Home extends JPanel{
     //only if it is already night(hence !changeDay) and
     //the user wants it to day (hence the changeNight)
     if(!changeDay && changeNight){
-      this.rColor-=3;
-      this.gColor-=3;
-      this.bColor-=3;
+      this.rColor-=2;
+      this.gColor-=2;
+      this.bColor-=2;
+
+      xSun += 8; 
+      ySun -= 3;
+
     }
 
 
     //this is the mechanics that indicates that night to day cycle has ended 
-    if(counter > 68){
+    if(counter > 75){
       changeNight = false;
       changeDay = true;
       counter = 0;
