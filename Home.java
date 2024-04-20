@@ -91,6 +91,7 @@ class Home extends Main{
       changeDay = false;
       changeNight = true;
       counter = 0;
+      System.exit(1);
     }
   }
 
