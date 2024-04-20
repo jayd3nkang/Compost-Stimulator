@@ -8,5 +8,7 @@ class Main extends JPanel{
     frame.setContentPane(ex);
     frame.pack();
     frame.setVisible(true);
+
+    ex.changeDay = true;
     }
 }
