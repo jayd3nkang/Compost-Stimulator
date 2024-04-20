@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Garden {
+public class Garden extends Main{
     public int HEIGHT = 1000;
     public int WIDTH = 1000;
     public Garden(int n){

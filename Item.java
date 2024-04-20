@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Item {
+public class Item extends Main{
     public int x;
     public int y;
     public int w;
