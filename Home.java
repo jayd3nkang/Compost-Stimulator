@@ -27,7 +27,7 @@ class Home extends Main{
       while(true){
         //System.out.println("qwerqwerqwerqwer");
         dayToNight();
-        //nightToDay();
+        nightToDay();
         repaint();
         try{
           Thread.sleep(100);
@@ -79,18 +79,17 @@ class Home extends Main{
       this.gColor+=2;
       this.bColor+=2;
 
-      xSun += 8;
-      ySun -= 3;
-
+      xSun += 15;
+      ySun -= 4;
+      System.out.println(counter + "day");
     }
     counter++;
-    System.out.println(counter);
-
     //this is the mechanics that indicates that day to night cycle has ended 
     if(counter > 75){
       changeDay = false;
       changeNight = true;
       counter = 0;
+      //System.exit(1);
     }
   }
 
@@ -103,11 +102,13 @@ class Home extends Main{
       this.rColor-=2;
       this.gColor-=2;
       this.bColor-=2;
-
-      xSun += 8; 
-      ySun -= 3;
-
+      xSun += 15; 
+      ySun += 4;
+      System.out.println(counter + "night");
     }
+
+    
+
 
 
     //this is the mechanics that indicates that night to day cycle has ended 
