@@ -9,17 +9,17 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Carrot extends Item {
-    public Carrot(int x, int y, int w, int h){
+    public Carrot(int x, int y){
         this.x = x;
         this.y = y;
-        this.w = w;
-        this.h = h;
+        this.w = 128;
+        this.h = 189;
     }
 
     public void draw(Graphics g){
-        ImageIcon carrot = new ImageIcon("flower.png");
+        ImageIcon carrot = new ImageIcon("carrot.png");
         Image pic = carrot.getImage();
-        g.drawImage(pic, 250 - (this.w/2), 30, this);
+        g.drawImage(pic, 400 - (this.w/2), 30, this);
         System.out.println("hello");
     }
 
