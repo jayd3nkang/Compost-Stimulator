@@ -8,19 +8,19 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class Carrot extends Item {
-    public Carrot(int x, int y){
+public class Twig extends Item{
+
+    public Twig(int x, int y){
         this.x = x;
         this.y = y;
-        this.w = 128;
-        this.h = 189;
+        this.w = 228;
+        this.h = 87;
     }
 
     public void draw(Graphics g){
-        ImageIcon carrot = new ImageIcon("carrot.png");
-        Image pic = carrot.getImage();
+        ImageIcon object = new ImageIcon("Twig.png");
+        Image pic = object.getImage();
         g.drawImage(pic, x, y, this);
-        System.out.println("hello");
+        //System.out.println("hello");
     }
-
 }

@@ -8,16 +8,19 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class Cup extends Item {
-    public Cup(int x, int y, int w, int h){
+public class Cup extends Item{
+
+    public Cup(int x, int y){
         this.x = x;
         this.y = y;
-        this.w = w;
-        this.h = h;
+        this.w = 102;
+        this.h = 139;
     }
 
     public void draw(Graphics g){
-        // ellie can draw here...
+        ImageIcon object = new ImageIcon("valcup.png");
+        Image pic = object.getImage();
+        g.drawImage(pic, x, y, this);
+        //System.out.println("hello");
     }
-
 }

@@ -9,15 +9,18 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Chips extends Item{
-    public Chips(int x, int y, int w, int h){
+
+    public Chips(int x, int y){
         this.x = x;
         this.y = y;
-        this.w = w;
-        this.h = h;
+        this.w = 129;
+        this.h = 148;
     }
 
     public void draw(Graphics g){
-        // ellie can draw here...
+        ImageIcon object = new ImageIcon("dorito.png");
+        Image pic = object.getImage();
+        g.drawImage(pic, x, y, this);
+        //System.out.println("hello");
     }
-
 }
