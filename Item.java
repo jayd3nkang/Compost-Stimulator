@@ -1,5 +1,14 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 
 public class Item extends Main{
     public int x;
@@ -7,7 +16,9 @@ public class Item extends Main{
     public int w;
     public int h;
     // draw method will be different for every object
-    public void draw(Graphics g){}
+    public void draw(Graphics g){
+        System.out.println("hi");
+    }
     // default is false but each object can have its own compostability
     public Boolean isCompostable(){
         return false;

@@ -20,6 +20,8 @@ class Home extends Main{
   boolean changeDay;
   boolean changeNight;
   static int counter;
+  int count;
+  public static Boolean cycleEnd = false;
 
   //using graphics to change the background sky color constantly 
   //as of 4/19/24, 21:52, it can only go through one cycle of
@@ -30,6 +32,7 @@ class Home extends Main{
         //System.out.println("qwerqwerqwerqwer");
         dayToNight();
         nightToDay();
+        count++;
         repaint();
         try{
           Thread.sleep(30);
@@ -75,6 +78,10 @@ class Home extends Main{
     g.drawImage(iconSun, xSun,ySun,this);
     g.drawImage(iconMoon, xMoon, yMoon,this);
 
+
+    ImageIcon compost = new ImageIcon("compost.png");
+    Image garden = compost.getImage();
+    if (cycleEnd) {g.drawImage(garden, 0, 0, this);}
   }
 
   //method that changes from day to night 
@@ -89,8 +96,8 @@ class Home extends Main{
 
       xSun += 8;
       ySun -= 3;
-      System.out.println(rColor + " " + gColor + " " + bColor + " day");
-      System.out.println(counter + " day");
+      //System.out.println(rColor + " " + gColor + " " + bColor + " day");
+      //System.out.println(counter + " day");
       //System.out.println(counter + "day");
       counter++;
     }
@@ -123,8 +130,8 @@ class Home extends Main{
       yMoon -= 3;
       // System.out.println(counter + "night");
       // System.out.println(xSun);
-      System.out.println(rColor + " " + gColor + " " + bColor + " night");
-      System.out.println(counter + " night");
+      //System.out.println(rColor + " " + gColor + " " + bColor + " night");
+      //System.out.println(counter + " night");
       counter++;
     }
 
@@ -148,6 +155,7 @@ class Home extends Main{
       changeNight = false;
       changeDay = true;
       counter = 0;
+      cycleEnd = true;
       //System.exit(1);
     }
 

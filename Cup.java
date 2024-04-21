@@ -1,5 +1,12 @@
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class Cup extends Item {
     public Cup(int x, int y, int w, int h){
@@ -8,7 +15,7 @@ public class Cup extends Item {
         this.w = w;
         this.h = h;
     }
-    @Override
+
     public void draw(Graphics g){
         // ellie can draw here...
     }

@@ -9,11 +9,13 @@ import java.awt.Image;
 
 public class sortingPopup extends Home{
     static JFrame frame;
+    Boolean sorted = false;
+    Carrot carrot;
     // list of items to be sorted every cycle
     Item[] list;
   JButton button = new JButton();
   public sortingPopup(){
-    this.setPreferredSize(new Dimension(800,500));
+    this.setPreferredSize(new Dimension(500,500));
     Thread main = new Thread(new myRunnable());
     main.start();
   }
@@ -50,7 +52,10 @@ public class sortingPopup extends Home{
   public void paintComponent(Graphics g){
     g.setColor(new Color(40,60,40));
     g.fillRect(0, 0, 800, 500);
-
+    for (int i = 0; i < list.length; i++){
+      list[i].draw(g);
+      while (sorted){}
+    }
   }
 
 }
