@@ -25,7 +25,7 @@ public class sortingPopup extends Home{
             list[i] = randomItem();
         }
         while(true){
-
+            sorting();
             repaint();
             try{
           Thread.sleep(100);
