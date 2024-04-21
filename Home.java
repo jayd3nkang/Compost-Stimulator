@@ -15,6 +15,8 @@ class Home extends Main{
   int bColor = 42;
   int xSun;
   int ySun;
+  int xMoon;
+  int yMoon;
   boolean changeDay;
   boolean changeNight;
   static int counter;
@@ -30,7 +32,7 @@ class Home extends Main{
         nightToDay();
         repaint();
         try{
-          Thread.sleep(100);
+          Thread.sleep(30);
         }
       catch(InterruptedException e){}
     }
@@ -49,6 +51,8 @@ class Home extends Main{
     counter = 0;
     xSun = -175;
     ySun = 200;
+    xMoon = -175;
+    yMoon = 200;
   }
 //setting up the canvas 
 
@@ -61,11 +65,15 @@ class Home extends Main{
     //drawing the sun and home
     ImageIcon sunPic = new ImageIcon("sun.png");
     ImageIcon housePic = new ImageIcon("house.png");
+    ImageIcon moonPic = new ImageIcon("moon.png");
     Image iconSun = sunPic.getImage();
     Image iconHouse = housePic.getImage();
+    Image iconMoon = moonPic.getImage();
+
    
     g.drawImage(iconHouse,0,0,this);
     g.drawImage(iconSun, xSun,ySun,this);
+    g.drawImage(iconMoon, xMoon, yMoon,this);
 
   }
 
@@ -79,11 +87,17 @@ class Home extends Main{
       this.gColor+=2;
       this.bColor+=2;
 
-      xSun += 15;
-      ySun -= 4;
-      System.out.println(counter + "day");
+      xSun += 8;
+      ySun -= 3;
+      System.out.println(rColor + " " + gColor + " " + bColor + " day");
+      System.out.println(counter + " day");
+      //System.out.println(counter + "day");
+      counter++;
     }
-    counter++;
+    if(xSun > 1050){
+      xSun = -175;
+      ySun = 200;
+    }
     //this is the mechanics that indicates that day to night cycle has ended 
     if(counter > 75){
       changeDay = false;
@@ -91,6 +105,7 @@ class Home extends Main{
       counter = 0;
       //System.exit(1);
     }
+   
   }
 
   //method that changes from night to day
@@ -102,22 +117,39 @@ class Home extends Main{
       this.rColor-=2;
       this.gColor-=2;
       this.bColor-=2;
-      xSun += 15; 
-      ySun += 4;
-      System.out.println(counter + "night");
+      xSun += 8; 
+      ySun += 3;
+      xMoon += 8;
+      yMoon -= 3;
+      // System.out.println(counter + "night");
+      // System.out.println(xSun);
+      System.out.println(rColor + " " + gColor + " " + bColor + " night");
+      System.out.println(counter + " night");
+      counter++;
     }
 
-    
+    if(xSun > 1050){
+      xSun = -175;
+      ySun = 200;
+    }
 
-
+    if(xMoon > 420){
+      xMoon += 8;
+      yMoon += 3;
+      
+    }
+    if(xMoon > 1050){
+      xMoon = -175;
+      yMoon = 200;
+    }
 
     //this is the mechanics that indicates that night to day cycle has ended 
     if(counter > 75){
       changeNight = false;
       changeDay = true;
       counter = 0;
+      //System.exit(1);
     }
 
-    counter++;
   }
 }
