@@ -13,7 +13,7 @@ public class sortingPopup extends Home{
     Item[] list;
   JButton button = new JButton();
   public sortingPopup(){
-    this.setPreferredSize(new Dimension(300,300));
+    this.setPreferredSize(new Dimension(800,500));
     Thread main = new Thread(new myRunnable());
     main.start();
   }
@@ -25,7 +25,7 @@ public class sortingPopup extends Home{
             list[i] = randomItem();
         }
         while(true){
-        //System.out.println("qwerqwerqwerqwer");
+
             repaint();
             try{
           Thread.sleep(100);
@@ -47,8 +47,8 @@ public class sortingPopup extends Home{
   }
 
   public void paintComponent(Graphics g){
-    g.setColor(new Color(30,30,30));
-    g.fillRect(0, 0, 300, 300);
+    g.setColor(new Color(40,60,40));
+    g.fillRect(0, 0, 800, 500);
 
   }
 

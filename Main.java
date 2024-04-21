@@ -8,7 +8,12 @@ class Main extends JPanel{
     frame.setContentPane(ex);
     frame.pack();
     frame.setVisible(true);
-
     ex.changeDay = true;
+
+    JFrame pop = new JFrame();
+    sortingPopup popup = new sortingPopup();
+    pop.setContentPane(popup);
+    pop.pack();
+    pop.setVisible(true);
     }
 }
