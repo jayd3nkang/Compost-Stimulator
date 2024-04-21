@@ -20,6 +20,7 @@ public class sortingPopup extends Home{
   public class myRunnable implements Runnable{
     public void run(){
         // every cycle, 8 items will need to be sorted
+        // popup goes through every item with a description of all the items
         list = new Item[8];
         for (int i = 0; i < list.length; i++){
             list[i] = randomItem();
