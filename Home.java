@@ -35,7 +35,7 @@ class Home extends Main{
       catch(InterruptedException e){}
     }
       }
-     
+
   }
   //setting up the size, thread and variables so
   //the cycle change can happen
