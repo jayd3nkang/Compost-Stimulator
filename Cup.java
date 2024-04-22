@@ -23,4 +23,7 @@ public class Cup extends Item{
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
+    // public void isCompostable(){
+    //     this.p = 1;
+    // }
 }

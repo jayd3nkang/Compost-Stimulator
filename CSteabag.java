@@ -15,6 +15,7 @@ public class CSteabag extends Item{
         this.y = y;
         this.w = 155;
         this.h = 126;
+        this.p = 1;
     }
 
     public void draw(Graphics g){

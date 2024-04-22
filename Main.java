@@ -6,9 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 class Main extends JPanel {
+  static JFrame frame = new JFrame();
+  static JFrame pop = new JFrame();
   //static JButton button;
   public static void main(String[] args){
-    JFrame frame = new JFrame();
     Home ex = new Home();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setContentPane(ex);
@@ -25,7 +26,6 @@ class Main extends JPanel {
     JButton compostButton = new JButton();
     JButton trashButton = new JButton();
     sortingPopup popup = new sortingPopup(compostButton, trashButton);
-    JFrame pop = new JFrame();
 
     pop.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     pop.setContentPane(popup);
@@ -40,6 +40,10 @@ class Main extends JPanel {
 
     pop.pack();
     pop.setVisible(Home.cycleEnd);
+    }
+
+    public static void popupEnd(boolean popEnd){
+      pop.setVisible(!popEnd);
     }
    
 }

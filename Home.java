@@ -22,16 +22,31 @@ class Home extends Main{
   static int counter;
   int count;
   public static Boolean cycleEnd = false;
+  int plantNumber = 1;
+  public static Item[] list = new Item[8];
+  public flower[] plants = new flower[6];
 
   //using graphics to change the background sky color constantly 
   //as of 4/19/24, 21:52, it can only go through one cycle of
-  //day and night. When attempting the second cycle the rbg goes out of bounds 
+  //day and night.
   public class myRunnable implements Runnable{
     public void run(){
       while(true){
         //System.out.println("qwerqwerqwerqwer");
-        dayToNight();
-        nightToDay();
+        if (!cycleEnd)
+        {dayToNight();
+        nightToDay();}
+        // if (sortingPopup.popEnd) {
+        //   // // initializes all the plants
+        //   // plants[0] = new flower(0, 0, 0);
+        //   // plants[1] = new flower(0, 0, 0);
+        //   // plants[2] = new flower(0, 0, 0);
+        //   // plants[3] = new flower(0, 0, 0);
+        //   // plants[4] = new flower(0, 0, 0);
+        //   // plants[5] = new flower(0, 0, 0);
+        //   checkScore(list);
+        //   plantNumber++;
+        // }
         count++;
         repaint();
         try{
@@ -57,6 +72,14 @@ class Home extends Main{
     ySun = 200;
     xMoon = -175;
     yMoon = 200;
+
+    plants[0] = new flower(15, 370, 0);
+    plants[1] = new flower(100, 430, 0);
+    plants[2] = new flower(270, 378, 0);
+    plants[3] = new flower(450, 380, 0);
+    plants[4] = new flower(670, 380, 0);
+    plants[5] = new flower(830, 380, 0);
+  
   }
 //setting up the canvas 
 
@@ -82,7 +105,20 @@ class Home extends Main{
 
     ImageIcon compost = new ImageIcon("compost.png");
     Image garden = compost.getImage();
-    if (cycleEnd) {g.drawImage(garden, 0, 0, this);}
+    if (sortingPopup.popEnd) {
+      g.drawImage(garden, 0, 0, this);
+      checkScore(list);
+      // plants[0].draw(g);
+      // plants[1].draw(g);
+      // plants[2].draw(g);
+      // plants[3].draw(g);
+      // plants[4].draw(g);
+      // plants[5].draw(g);
+      for(int i = 0; i < plants.length; i++){
+        plants[i].draw(g);
+        plantNumber++;
+      }
+    }
   }
 
   //method that changes from day to night 
@@ -97,9 +133,6 @@ class Home extends Main{
 
       xSun += 8;
       ySun -= 3;
-      //System.out.println(rColor + " " + gColor + " " + bColor + " day");
-      //System.out.println(counter + " day");
-      //System.out.println(counter + "day");
       counter++;
     }
     if(xSun > 1050){
@@ -160,5 +193,49 @@ class Home extends Main{
       //System.exit(1);
     }
 
+
   }
+
+  public void checkScore(Item[] list){
+    int x = 0;
+    int y = 0;
+    int score = 0;
+    for (int i = 0; i < list.length; i++){
+      if (list[i].l == list[i].p) {score++;}
+    }
+
+    // plantNumber is an int denoting which plant is being drawn
+    System.out.println("Score: " + score);
+    if (score >= 5) {
+      // for (int j = 0; j < plants.length; j++){
+      //   for (int k = 0; k < plantNumber; k++){
+      //   if (k == 0) {plants[j].x = 15; plants[j].y = 370;}
+      //   if (k == 1) {plants[j].x = 100; plants[j].y = 430;}
+      //   if (k == 2) {plants[j].x = 270; plants[j].y = 380;}
+      //   if (k == 3) {plants[j].x = 450; plants[j].y = 380;}
+      //   if (k == 4) {plants[j].x = 670; plants[j].y = 380;}
+      //   if (k == 5) {plants[j].x = 830; plants[j].y = 380;}
+      //   plants[j].draw(getGraphics());
+      //   }
+      // }
+      for (int i = 0; i < plants.length; i++){
+        plants[i].state++;
+      }
+    }
+    else for (int i = 0; i < plants.length; i++){
+      plants[i].state--;
+    }
+    // for(int i = 0; i < plants.length; i++){
+    //   plants[i].draw(getGraphics());
+    // }
+  }
+
+
+  // gets the new list of random items each cycle
+  public static void getList(Item[] items){
+    for (int i = 0; i < list.length; i++){
+      list[i] = items[i];
+    }
+  }
+
 }

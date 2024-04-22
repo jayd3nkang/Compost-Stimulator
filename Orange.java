@@ -15,6 +15,7 @@ public class Orange extends Item{
         this.y = y;
         this.w = 121;
         this.h = 139;
+        this.p = 1;
     }
 
     public void draw(Graphics g){
@@ -23,4 +24,7 @@ public class Orange extends Item{
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
+    // public void isCompostable(){
+    //     this.p = 1;
+    // }
 }

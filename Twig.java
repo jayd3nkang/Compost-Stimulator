@@ -15,6 +15,7 @@ public class Twig extends Item{
         this.y = y;
         this.w = 228;
         this.h = 87;
+        this.p = 1;
     }
 
     public void draw(Graphics g){

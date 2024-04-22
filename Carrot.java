@@ -14,6 +14,7 @@ public class Carrot extends Item {
         this.y = y;
         this.w = 128;
         this.h = 189;
+        this.p = 1;
     }
 
     public void draw(Graphics g){
@@ -22,5 +23,8 @@ public class Carrot extends Item {
         g.drawImage(pic, x, y, this);
         System.out.println("hello");
     }
+    // public void isCompostable(){
+    //     this.p = 1;
+    // }
 
 }

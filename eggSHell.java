@@ -15,6 +15,7 @@ public class eggSHell extends Item{
         this.y = y;
         this.w = 150;
         this.h = 96;
+        this.p = 1;
     }
 
     // public void draw(Graphics g){
@@ -29,4 +30,7 @@ public class eggSHell extends Item{
         // TODO Auto-generated method stub
         //throw new UnsupportedOperationException("Unimplemented method 'draw'");
     }
+    // public void isCompostable(){
+    //     this.p = 1;
+    // }
 }

@@ -15,6 +15,7 @@ public class spinAch extends Item{
         this.y = y;
         this.w = 100;
         this.h = 182;
+        this.p = 1;
     }
 
     public void draw(Graphics g){
@@ -23,4 +24,7 @@ public class spinAch extends Item{
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
+    // public void isCompostable(){
+    //     this.p = 1;
+    // }
 }

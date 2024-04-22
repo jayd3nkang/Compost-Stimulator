@@ -14,16 +14,19 @@ public class sortingPopup extends Home implements ActionListener{
     Boolean sorted = false;
     Carrot carrot;
     // list of items to be sorted every cycle
-    Item[] list;
+    public static Item[] list;
     JButton compostButton;
     JButton trashButton;
     int counter = 0;
+    public static Boolean popEnd = false;
+
+    int location;
+    int buttonPressed = 0;
     //double placeboC = 0.0;
 
   public sortingPopup(JButton input, JButton input2){
     compostButton = input;
     trashButton = input2;
-    //button.setText("COMPOSTABLE");
     ImageIcon compostIcon = new ImageIcon("compostButton.png");
     ImageIcon trashIcon = new ImageIcon("trashButton.png");
     compostButton.addActionListener(this);
@@ -36,6 +39,7 @@ public class sortingPopup extends Home implements ActionListener{
     for(int i = 0; i < list.length; i++){
       list[i] = randomItem();
     }
+    Home.getList(list);
 
 
     Thread main = new Thread(new myRunnable());
@@ -51,8 +55,13 @@ public class sortingPopup extends Home implements ActionListener{
         //     list[i] = randomItem();
         // }
         while(true){
-            sorting();
+            // sorting();
             repaint();
+            if (counter >= 7) {
+              popEnd = true;
+              Main.popupEnd(popEnd);
+              counter = 0;
+        }
             try{
           Thread.sleep(100);
         }
@@ -61,9 +70,9 @@ public class sortingPopup extends Home implements ActionListener{
       }
      
   }
-  public void sorting(){
-    // check if the user is clicking the right button
-  }
+  // public void sorting(){
+  //   // check if the user is clicking the right button
+  // }
 
   public Item randomItem(){
     int r = (int) (Math.random() * 16) + 1;
@@ -114,6 +123,7 @@ public class sortingPopup extends Home implements ActionListener{
     if(e.getSource() == compostButton){
       //placeboC+=0.5;
       counter++;
+      list[buttonPressed].changeLocation(1);
       System.out.println("compost button clicked");
       // if(counter > 2){
       //   System.exit(1);
@@ -122,8 +132,10 @@ public class sortingPopup extends Home implements ActionListener{
     if(e.getSource() == trashButton){
       counter++;
       System.out.println("trash button clicked");
+      list[buttonPressed].changeLocation(0);
 
     }
+    buttonPressed++;
     //throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
   }
 
