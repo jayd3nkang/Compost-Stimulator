@@ -35,7 +35,8 @@ class Home extends Main{
         count++;
         repaint();
         try{
-          Thread.sleep(30);
+          //always 30
+          Thread.sleep(10);
         }
       catch(InterruptedException e){}
     }

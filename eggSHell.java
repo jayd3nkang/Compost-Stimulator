@@ -17,10 +17,16 @@ public class eggSHell extends Item{
         this.h = 96;
     }
 
-    public void draw(Graphics g){
+    // public void draw(Graphics g){
+    //     //System.out.println("hello");
+    // }
+
+   // @Override
+    public void draw(Graphics g) {
         ImageIcon object = new ImageIcon("eggSHell.png");
         Image pic = object.getImage();
         g.drawImage(pic, x, y, this);
-        //System.out.println("hello");
+        // TODO Auto-generated method stub
+        //throw new UnsupportedOperationException("Unimplemented method 'draw'");
     }
 }

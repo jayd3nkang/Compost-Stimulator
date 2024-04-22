@@ -21,7 +21,6 @@ public class Item extends Main{
     public int p;
     // draw method will be different for every object
     public void draw(Graphics g){
-        System.out.println("hi");
     }
     // default is false but each object can have its own compostability
     public int isCompostable(){
@@ -31,34 +30,35 @@ public class Item extends Main{
         // updating every time an item is sorted (check the whole array of items).
         return 0;
     }
-    public void followsMouse(){};
+    //public void followsMouse(){};
     // returns the left-most x value of the object
-    public int getX(){
-        return this.x;
-    }
-    // returns the bottom (upper) most y value of the object
-    public int getY(){
-        return this.y;
-    }
-    // returns the width of the object
-    public int getWidth(){
-        return this.w;
-    }
-    // returns the height of the object
-    public int getHeight(){
-        return this.h;
-    }
+    // public int getX(){
+    //     return this.x;
+    // }
+    // // returns the bottom (upper) most y value of the object
+    // public int getY(){
+    //     return this.y;
+    // }
+    // // returns the width of the object
+    // public int getWidth(){
+    //     return this.w;
+    // }
+    // // returns the height of the object
+    // public int getHeight(){
+    //     return this.h;
+    // }
     // changes the x value (for moving on screen)
-    public void setX(int ex){
-        this.x = ex;
-    }
-    // changes the y value
-    public void setY(int why){
-        this.y = why;
-    }
+    // public void setX(int ex){
+    //     this.x = ex;
+    // }
+    // // changes the y value
+    // public void setY(int why){
+    //     this.y = why;
+    // }
+    //public abstract void draw(Graphics g);
     // checks if the mouse click is within the hitbox of the object
-    public Boolean getHitBox(int mx, int my){
-        if ((mx >= this.x && mx <= this.x + this.getWidth()) && (my >= this.y && my <= this.y + this.getHeight())) return true;
-        return false;
-    }
+    // public Boolean getHitBox(int mx, int my){
+    //     if ((mx >= this.x && mx <= this.x + this.getWidth()) && (my >= this.y && my <= this.y + this.getHeight())) return true;
+    //     return false;
+    // }
 }
