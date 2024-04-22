@@ -25,6 +25,7 @@ class Home extends Main{
   int plantNumber = 1;
   public static Item[] list = new Item[8];
   public flower[] plants = new flower[6];
+  int score;
 
   //using graphics to change the background sky color constantly 
   //as of 4/19/24, 21:52, it can only go through one cycle of
@@ -36,17 +37,6 @@ class Home extends Main{
         if (!cycleEnd)
         {dayToNight();
         nightToDay();}
-        // if (sortingPopup.popEnd) {
-        //   // // initializes all the plants
-        //   // plants[0] = new flower(0, 0, 0);
-        //   // plants[1] = new flower(0, 0, 0);
-        //   // plants[2] = new flower(0, 0, 0);
-        //   // plants[3] = new flower(0, 0, 0);
-        //   // plants[4] = new flower(0, 0, 0);
-        //   // plants[5] = new flower(0, 0, 0);
-        //   checkScore(list);
-        //   plantNumber++;
-        // }
         count++;
         repaint();
         try{
@@ -73,12 +63,12 @@ class Home extends Main{
     xMoon = -175;
     yMoon = 200;
 
-    plants[0] = new flower(15, 370, 0);
-    plants[1] = new flower(100, 430, 0);
-    plants[2] = new flower(270, 378, 0);
-    plants[3] = new flower(450, 380, 0);
-    plants[4] = new flower(670, 380, 0);
-    plants[5] = new flower(830, 380, 0);
+    plants[0] = new flower(15, 550, 0);
+    plants[1] = new flower(100, 610, 0);
+    plants[2] = new flower(270, 558, 0);
+    plants[3] = new flower(380, 560, 0);
+    plants[4] = new flower(670, 560, 0);
+    plants[5] = new flower(830, 560, 0);
   
   }
 //setting up the canvas 
@@ -115,7 +105,13 @@ class Home extends Main{
       // plants[4].draw(g);
       // plants[5].draw(g);
       for(int i = 0; i < plants.length; i++){
-        plants[i].draw(g);
+        if (score < 3){
+          plants[i].drawUnhealthy(g);
+        }
+        if (score > 5){
+          plants[i].drawHealthy(g);
+        }
+       if (score <= 5 && score >= 3) {plants[i].drawSprout(g);}
         plantNumber++;
       }
     }
@@ -199,9 +195,15 @@ class Home extends Main{
   public void checkScore(Item[] list){
     int x = 0;
     int y = 0;
-    int score = 0;
+    score = 0;
     for (int i = 0; i < list.length; i++){
-      if (list[i].l == list[i].p) {score++;}
+      if (list[i].l == list[i].p) {
+        score++;
+        for (int j = 0; j < plants.length; j++){
+          plants[j].state = score;
+          System.out.println(plants[j].state);
+        }
+      }
     }
 
     // plantNumber is an int denoting which plant is being drawn
@@ -212,14 +214,14 @@ class Home extends Main{
       //   if (k == 0) {plants[j].x = 15; plants[j].y = 370;}
       //   if (k == 1) {plants[j].x = 100; plants[j].y = 430;}
       //   if (k == 2) {plants[j].x = 270; plants[j].y = 380;}
-      //   if (k == 3) {plants[j].x = 450; plants[j].y = 380;}
+      //   if (k == 3) {plants[j].x = 380; plants[j].y = 380;}
       //   if (k == 4) {plants[j].x = 670; plants[j].y = 380;}
       //   if (k == 5) {plants[j].x = 830; plants[j].y = 380;}
       //   plants[j].draw(getGraphics());
       //   }
       // }
       for (int i = 0; i < plants.length; i++){
-        plants[i].state++;
+        plants[i].state = score;
       }
     }
     else for (int i = 0; i < plants.length; i++){

@@ -77,22 +77,22 @@ public class sortingPopup extends Home implements ActionListener{
   public Item randomItem(){
     int r = (int) (Math.random() * 16) + 1;
     Item i = new Item();
-    if (r == 1) {i = new Carrot(0, 0);};
-    if (r == 2) {i = new banana(0, 0);};
-    if (r == 3) {i = new battery(0, 0);};
-    if (r == 4) {i = new halfApizza(0, 0);};
-    if (r == 5) {i = new Cup(0, 0);};
-    if (r == 6) {i = new spinAch(0, 0);};
-    if (r == 7) {i = new Orange(0, 0);};
-    if (r == 8) {i = new potato(0, 0);};
-    if (r == 9) {i = new Twig(0, 0);};
-    if (r == 10) {i = new eggSHell(0, 0);};
-    if (r == 11) {i = new cig(0, 0);};
-    if (r == 12) {i = new Chips(0, 0);};
-    if (r == 13) {i = new book(0, 0);};
-    if (r == 14) {i = new can(0, 0);};
-    if (r == 15) {i = new CSteabag(0, 0);};
-    if (r == 16) {i = new coffeebean(0, 0);};
+    if (r == 1) {i = new Carrot(380, 250);};
+    if (r == 2) {i = new banana(380, 250);};
+    if (r == 3) {i = new battery(380, 250);};
+    if (r == 4) {i = new halfApizza(380, 250);};
+    if (r == 5) {i = new Cup(380, 250);};
+    if (r == 6) {i = new spinAch(380, 250);};
+    if (r == 7) {i = new Orange(380, 250);};
+    if (r == 8) {i = new potato(380, 250);};
+    if (r == 9) {i = new Twig(380, 250);};
+    if (r == 10) {i = new eggSHell(380, 250);};
+    if (r == 11) {i = new cig(380, 250);};
+    if (r == 12) {i = new Chips(380, 200);};
+    if (r == 13) {i = new book(380, 200);};
+    if (r == 14) {i = new can(380, 200);};
+    if (r == 15) {i = new CSteabag(380, 200);};
+    if (r == 16) {i = new coffeebean(380, 200);};
     return i;
   }
 
@@ -106,7 +106,7 @@ public class sortingPopup extends Home implements ActionListener{
     // Image cb = compostButton.getImage();
     // Image tb = trashButton.getImage();
     // g.drawImage(cb, 50, 250, this);
-    // g.drawImage(tb, 450, 250, this);
+    // g.drawImage(tb, 380, 250, this);
     // for (int i = 0; i < list.length; i++){
     //   list[i].x = 400 - (list[i].w/2);
     //   list[i].y = 30;
