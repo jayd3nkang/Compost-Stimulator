@@ -63,12 +63,12 @@ class Home extends Main{
     xMoon = -175;
     yMoon = 200;
 
-    plants[0] = new flower(15, 550, 0);
-    plants[1] = new flower(100, 610, 0);
-    plants[2] = new flower(270, 558, 0);
-    plants[3] = new flower(380, 560, 0);
-    plants[4] = new flower(670, 560, 0);
-    plants[5] = new flower(830, 560, 0);
+    plants[0] = new flower(15, 370, 0);
+    plants[1] = new flower(100, 430, 0);
+    plants[2] = new flower(270, 378, 0);
+    plants[3] = new flower(380, 380, 0);
+    plants[4] = new flower(670, 380, 0);
+    plants[5] = new flower(830, 380, 0);
   
   }
 //setting up the canvas 
