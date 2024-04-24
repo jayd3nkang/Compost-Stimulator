@@ -8,19 +8,23 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class Chips extends Item{
+public class potato extends Item{
 
-    public Chips(int x, int y){
+    public potato(int x, int y){
         this.x = x;
         this.y = y;
-        this.w = 129;
-        this.h = 148;
+        this.w = 167;
+        this.h = 80;
+        this.p = 1;
     }
 
     public void draw(Graphics g){
-        ImageIcon object = new ImageIcon("dorito.png");
+        ImageIcon object = new ImageIcon("potato.png");
         Image pic = object.getImage();
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
+    // public void isCompostable(){
+    //     this.p = 1;
+    // }
 }

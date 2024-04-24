@@ -1,16 +1,30 @@
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class Carrot extends Item {
-    public Carrot(int x, int y, int w, int h){
+    public Carrot(int x, int y){
         this.x = x;
         this.y = y;
-        this.w = w;
-        this.h = h;
+        this.w = 128;
+        this.h = 189;
+        this.p = 1;
     }
-    @Override
+
     public void draw(Graphics g){
-        // ellie can draw here...
+        ImageIcon carrot = new ImageIcon("carrot.png");
+        Image pic = carrot.getImage();
+        g.drawImage(pic, x, y, this);
+        System.out.println("hello");
     }
+    // public void isCompostable(){
+    //     this.p = 1;
+    // }
 
 }

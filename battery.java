@@ -8,18 +8,18 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class Chips extends Item{
+public class battery extends Item{
 
-    public Chips(int x, int y){
+    public battery(int x, int y){
         this.x = x;
         this.y = y;
-        this.w = 129;
-        this.h = 148;
+        this.w = 101;
+        this.h = 92;
     }
 
     public void draw(Graphics g){
-        ImageIcon object = new ImageIcon("dorito.png");
-        Image pic = object.getImage();
+        ImageIcon carrot = new ImageIcon("battery.png");
+        Image pic = carrot.getImage();
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
