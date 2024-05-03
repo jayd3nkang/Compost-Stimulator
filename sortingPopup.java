@@ -10,10 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class sortingPopup extends Home implements ActionListener{
-    //static JFrame frame;
     Boolean sorted = false;
-    String allItems = "";
-    //Carrot carrot;
     // list of items to be sorted every cycle
     public static Item[] list;
 
@@ -48,7 +45,6 @@ public class sortingPopup extends Home implements ActionListener{
       list[i] = randomItem();
     }
     Home.getList(list);
-    createListOfItems();
 
     Thread main = new Thread(new myRunnable());
     main.start();
@@ -62,13 +58,11 @@ public class sortingPopup extends Home implements ActionListener{
             // sorting();
             repaint();
             if (counter >= 7) {
-              System.out.println("HELLO");
               popEnd = true;
               pop.setVisible(false);
               garden.setVisible(true);
               counter = 0;
               generateNewList();
-              createListOfItems();
         }
             try{
           Thread.sleep(10);
@@ -78,9 +72,7 @@ public class sortingPopup extends Home implements ActionListener{
       }
      
   }
-  // public void sorting(){
-  //   // check if the user is clicking the right button
-  // }
+
 
   public Item randomItem(){
     int r = (int) (Math.random() * 16) + 1;
@@ -108,28 +100,19 @@ public class sortingPopup extends Home implements ActionListener{
     g.setColor(new Color(200,210,200));
     g.fillRect(0, 0, 800, 500);
     list[counter].draw(g);
-    //System.out.println("counter is: " + counter);
   }
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    //int counter = 0;
     // TODO Auto-generated method stub
     if(e.getSource() == compostButton){
-      //placeboC+=0.5;
       counter++;
-      //list[buttonPressed].changeLocation(1);
-      System.out.println("compost button clicked");
     }
     if(e.getSource() == trashButton){
       counter++;
-      System.out.println("trash button clicked");
-      //list[buttonPressed].changeLocation(0);
     }
-    System.out.println(counter);
 
   }
-
   //creates a new set of items for the user(s) to sort through
   public void generateNewList(){
     Item[] toReturn = new Item[8];
@@ -138,14 +121,6 @@ public class sortingPopup extends Home implements ActionListener{
     }
     for(int i = 0; i < toReturn.length; i++){
       this.list[i] = toReturn[i];
-    }
-    
-    //return toReturn;
-  }
-  public void createListOfItems(){
-    allItems = "";
-    for(int i = 0; i < list.length; i++){
-      allItems += list[i].toString() + " ";
     }
   }
 

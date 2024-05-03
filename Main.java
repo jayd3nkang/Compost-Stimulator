@@ -16,33 +16,11 @@ class Main extends JPanel {
     seeGarden = false;
 
     homeSetUp();
-   
-
     while (!Home.cycleEnd){
       System.out.print("");
     }
     popUpScreenSetUp();
-    // if(sortingPopup.popEnd != false){
-      
-    //   //System.out.println("HELLOOOO");
-    // }
-    // //frame.setVisible(false);
-    //System.out.println("LETS GO" + "\n");
-    //popUpScreenSetUp();
 
-    // while(!ex.getGardenButtonStatus()){
-    //   System.out.print("");
-    // }
-    // System.out.println("world says hello");
-    // while(true){
-    //   if(!ex.getGardenButtonStatus()){
-    //     pop.setVisible(true);
-    //   }
-    //   else{
-    //     pop.setVisible(false);
-    //   }
-    // }
-    
     }
 
     public static void popupEnd(boolean popEnd){

@@ -84,7 +84,6 @@ class Home extends Main{
   }
   public Home(JFrame f){
     this();
-    System.out.println("HOLA");
     this.setPreferredSize(new Dimension(1000,1000));
     Thread main = new Thread(new myRunnable());
     main.start();

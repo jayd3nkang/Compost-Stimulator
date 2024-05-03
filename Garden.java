@@ -70,11 +70,7 @@ public class Garden extends Home implements ActionListener{
       seeGarden = false;
       Main.seeG(seeGarden);
       Home.play = true;
-      System.out.println("BEFORE " + Home.gardenButtonStatus);
       Home.gardenButtonStatus = true;
-      System.out.println("AFTER " + Home.gardenButtonStatus);
-      //Home.ySun++;
-      System.out.println("BUTTON PRESSED");
       buttonPressed  = 0;
       
     }
