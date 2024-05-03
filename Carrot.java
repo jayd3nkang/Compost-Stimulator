@@ -23,8 +23,8 @@ public class Carrot extends Item {
         g.drawImage(pic, x, y, this);
        
     }
-    // public void isCompostable(){
-    //     this.p = 1;
-    // }
+    public String toString(){
+        return "Carrot";
+    }
 
 }

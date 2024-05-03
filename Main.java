@@ -62,7 +62,7 @@ class Main extends JPanel {
     public static void popUpScreenSetUp(){
       JButton compostButton = new JButton();
       JButton trashButton = new JButton();
-      SortingPopUp popup = new SortingPopUp(compostButton, trashButton);
+      sortingPopup popup = new sortingPopup(compostButton, trashButton);
   
       pop.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       pop.setContentPane(popup);

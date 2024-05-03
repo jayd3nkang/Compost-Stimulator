@@ -24,7 +24,7 @@ public class coffeebean extends Item{
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
-    // public void isCompostable(){
-    //     this.p = 1;
-    // }
+    public String toString(){
+        return "Coffeebean";
+    }
 }

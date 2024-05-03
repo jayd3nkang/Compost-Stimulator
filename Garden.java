@@ -62,9 +62,6 @@ public class Garden extends Home implements ActionListener{
     }
     @Override
   public void actionPerformed(ActionEvent e) {
-    //int counter = 0;
-    // TODO Auto-generated method stub
-    //System.out.println(Home.play);
 
     if(e.getSource() == nextCycle){
 
@@ -78,10 +75,10 @@ public class Garden extends Home implements ActionListener{
       System.out.println("AFTER " + Home.gardenButtonStatus);
       //Home.ySun++;
       System.out.println("BUTTON PRESSED");
+      buttonPressed  = 0;
       
     }
     buttonPressed++;
-    //throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
   }
   
 

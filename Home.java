@@ -16,19 +16,9 @@ class Home extends Main{
   int gColor = 33;
   int bColor = 42;
   double xSun;
-  public static double ySun;
+  double ySun;
   double xMoon;
   double yMoon;
-
-  // double startXSun = 0.0;
-  // double startXMoon = 0.0;
-  // double startYSun = -628.0;
-  // double startYMoon = 1628.0;
-
-  // double xSunCal;
-  // double ySunCal;
-  // double xMoonCal;
-  // double yMoonCal;
 
   static int counter;
   int count;
@@ -57,9 +47,7 @@ class Home extends Main{
       play = true;
       
       while(true){
-        // System.out.println("x sun = " + xSun);
-        // System.out.println("y sun = " + ySun);
-        // System.out.println(gardenButtonStatus);
+
         if (gardenButtonStatus){
           cycle();
           if(xSun >= 525 && (int)ySun == 799){
@@ -68,11 +56,9 @@ class Home extends Main{
           }
         }
         if(!gardenButtonStatus){
-          // play = false;
           cycleEnd = true;
           if(xSun >= 500 && (int)ySun == 799){
             xSun--;
-            //gardenButtonStatus = true;
           }
         }
         count++;
@@ -128,7 +114,6 @@ class Home extends Main{
 
   //drawing the components that need to be drawn
   public void paintComponent(Graphics g){
-    //xSun = homeXSun;
     //drawing the sky color
     g.setColor(new Color(rColor, gColor, bColor));
     g.fillRect(0,0, 1000, 1000);
@@ -155,16 +140,7 @@ class Home extends Main{
 
     }
 
-    // if((int)ySun == 799){
-    //   ySun = 800.0;
-    // }
-    // else{
-    //   ySun = -1 * (Math.sqrt(640000 - Math.pow((xSun - 500), 2)));
-
-    // }
-    //System.out.println("before y: " + ySun);
     ySun = -1 * (Math.sqrt(640000 - Math.pow((xSun - 500), 2)));
-    System.out.println("after y: " + ySun);
 
 
 
@@ -173,17 +149,9 @@ class Home extends Main{
   if (sunDown) {
       xSun -= 5;
       xMoon += 5;
-      // if((int)ySun == 799){
-      //   ySun = 800.0;
-      // }
-      // else{
-      //  ySun = (Math.sqrt(640000 - Math.pow((xSun - 500), 2)));
-      // }
-      double temp = ySun;
-      System.out.println("beforeeeeee y: " + ySun + " " + temp);
+   
       ySun = (Math.sqrt(640000 - Math.pow((xSun - 500), 2)));
-      //ySun = temp;
-      System.out.println("aferterrrr y: " + ySun);
+
 
 
       if (xSun <= 0) sunDown = false;
@@ -205,7 +173,6 @@ class Home extends Main{
 
 
   if (yMoon <= 500 && xSun <= 500) play = false;
-  //if(yMoonCal <= 500 && xSunCal <= 500) play = false;
 }
   public void checkScore(Item[] list){
     score = 0;
@@ -214,25 +181,12 @@ class Home extends Main{
         score++;
         for (int j = 0; j < plants.length; j++){
           plants[j].state = score;
-          //System.out.println(plants[j].state);
         }
       }
     }
 
     // plantNumber is an int denoting which plant is being drawn
-   // System.out.println("Score: " + score);
     if (score >= 5) {
-      // for (int j = 0; j < plants.length; j++){
-      //   for (int k = 0; k < plantNumber; k++){
-      //   if (k == 0) {plants[j].x = 15; plants[j].y = 370;}
-      //   if (k == 1) {plants[j].x = 100; plants[j].y = 430;}
-      //   if (k == 2) {plants[j].x = 270; plants[j].y = 380;}
-      //   if (k == 3) {plants[j].x = 380; plants[j].y = 380;}
-      //   if (k == 4) {plants[j].x = 670; plants[j].y = 380;}
-      //   if (k == 5) {plants[j].x = 830; plants[j].y = 380;}
-      //   plants[j].draw(getGraphics());
-      //   }
-      // }
       for (int i = 0; i < plants.length; i++){
         plants[i].state = score;
       }
@@ -240,9 +194,7 @@ class Home extends Main{
     else for (int i = 0; i < plants.length; i++){
       plants[i].state--;
     }
-    // for(int i = 0; i < plants.length; i++){
-    //   plants[i].draw(getGraphics());
-    // }
+
   }
 
 

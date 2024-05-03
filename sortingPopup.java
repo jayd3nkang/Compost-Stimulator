@@ -9,9 +9,10 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SortingPopUp extends Home implements ActionListener{
+public class sortingPopup extends Home implements ActionListener{
     //static JFrame frame;
     Boolean sorted = false;
+    String allItems = "";
     //Carrot carrot;
     // list of items to be sorted every cycle
     public static Item[] list;
@@ -26,7 +27,7 @@ public class SortingPopUp extends Home implements ActionListener{
     int buttonPressed = 0;
     //double placeboC = 0.0;
 
-  public SortingPopUp(JButton input, JButton input2){
+  public sortingPopup(JButton input, JButton input2){
     compostButton = input;
     trashButton = input2;
 
@@ -47,6 +48,7 @@ public class SortingPopUp extends Home implements ActionListener{
       list[i] = randomItem();
     }
     Home.getList(list);
+    createListOfItems();
 
     Thread main = new Thread(new myRunnable());
     main.start();
@@ -56,19 +58,17 @@ public class SortingPopUp extends Home implements ActionListener{
     public void run(){
         // every cycle, 8 items will need to be sorted
         // popup goes through every item with a description of all the items
-        // list = new Item[8];
-        // for (int i = 0; i < list.length; i++){
-        //     list[i] = randomItem();
-        // }
-        while(!popEnd){
+        while(true){
             // sorting();
             repaint();
             if (counter >= 7) {
+              System.out.println("HELLO");
               popEnd = true;
               pop.setVisible(false);
               garden.setVisible(true);
               counter = 0;
-              list = generateNewList();
+              generateNewList();
+              createListOfItems();
         }
             try{
           Thread.sleep(10);
@@ -126,21 +126,27 @@ public class SortingPopUp extends Home implements ActionListener{
       System.out.println("trash button clicked");
       //list[buttonPressed].changeLocation(0);
     }
+    System.out.println(counter);
 
-    // if(e.getSource() == nextDay){
-    //   System.out.println("HELLo");
-    // }
-    //buttonPressed++;
   }
 
   //creates a new set of items for the user(s) to sort through
-  public Item[] generateNewList(){
+  public void generateNewList(){
     Item[] toReturn = new Item[8];
     for(int i = 0; i < toReturn.length; i++){
       toReturn[i] = randomItem();
     }
-
-    return toReturn;
+    for(int i = 0; i < toReturn.length; i++){
+      this.list[i] = toReturn[i];
+    }
+    
+    //return toReturn;
+  }
+  public void createListOfItems(){
+    allItems = "";
+    for(int i = 0; i < list.length; i++){
+      allItems += list[i].toString() + " ";
+    }
   }
 
 }
