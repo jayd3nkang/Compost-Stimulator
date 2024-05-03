@@ -30,8 +30,8 @@ public class Item extends Main{
     //     // updating every time an item is sorted (check the whole array of items).
     //     this.p = 0;
     // }
-    public void changeLocation(int loc){
-        this.l = loc;
-    }
+    // public void changeLocation(int loc){
+    //     this.l = loc;
+    // }
     
 }
