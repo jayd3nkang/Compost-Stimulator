@@ -65,8 +65,10 @@ public class SortingPopUp extends Home implements ActionListener{
             repaint();
             if (counter >= 7) {
               popEnd = true;
-              Main.popupEnd(popEnd);
+              pop.setVisible(false);
+              garden.setVisible(true);
               counter = 0;
+              list = generateNewList();
         }
             try{
           Thread.sleep(10);

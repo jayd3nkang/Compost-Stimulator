@@ -64,13 +64,14 @@ class Home extends Main{
           cycle();
           if(xSun >= 525 && (int)ySun == 799){
             gardenButtonStatus = false;
+            pop.setVisible(true);
           }
         }
         if(!gardenButtonStatus){
           // play = false;
           cycleEnd = true;
           if(xSun >= 500 && (int)ySun == 799){
-            ySun++;
+            xSun--;
             //gardenButtonStatus = true;
           }
         }

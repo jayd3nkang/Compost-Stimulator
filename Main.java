@@ -76,7 +76,6 @@ class Main extends JPanel {
       //button.addActionListener(popup);
   
       pop.pack();
-      pop.setVisible(Home.cycleEnd);
   
       JButton newCycleButton = new JButton();
       newCycleButton.setBounds(500, 200, 400, 200);
