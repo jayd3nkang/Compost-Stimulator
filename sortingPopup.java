@@ -107,9 +107,11 @@ public class sortingPopup extends Home implements ActionListener{
     // TODO Auto-generated method stub
     if(e.getSource() == compostButton){
       counter++;
+      list[counter].setClassification(1);
     }
     if(e.getSource() == trashButton){
       counter++;
+      list[counter].setClassification(0);
     }
 
   }

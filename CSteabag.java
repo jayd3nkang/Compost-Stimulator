@@ -9,7 +9,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class CSteabag extends Item{
-
+    private int classification = -1;
     public CSteabag(int x, int y){
         this.x = x;
         this.y = y;
@@ -27,5 +27,14 @@ public class CSteabag extends Item{
 
     public String toString(){
         return "Teabag";
+    }
+    public int isCompostable(){
+        return 1;
+    }
+    public int getClassification(){
+        return classification;
+    }
+    public void setClassification(int c){
+        this.classification = c;
     }
 }

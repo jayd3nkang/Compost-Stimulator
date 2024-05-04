@@ -10,7 +10,8 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 
-public class Item extends Main{
+public  class Item extends Main{
+    //public abstract  classification;
     public int x;
     public int y;
     public int w;
@@ -19,6 +20,16 @@ public class Item extends Main{
     public int l;
     // p for preferred location to see if the actual location is the same as the preferred location (compost or trash)
     public int p = 0;
+
+    public int isCompostable(){
+        return 0;
+    }
+    public void setClassification(int c){
+
+    }
+    public int getClassification(){
+        return 0;
+    }
     // draw method will be different for every object
     public void draw(Graphics g){
     }
@@ -33,8 +44,8 @@ public class Item extends Main{
     public void changeLocation(int loc){
         this.l = loc;
     }
-    public String toString(){
-        return "";
-    }
+    //public abstract void draw();
+    //public abstract 
+    //public abstract String toString();
     
 }

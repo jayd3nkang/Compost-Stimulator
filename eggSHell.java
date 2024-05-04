@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class eggSHell extends Item{
+    private int classification = -1;
 
     public eggSHell(int x, int y){
         this.x = x;
@@ -32,5 +33,14 @@ public class eggSHell extends Item{
     }
     public String toString(){
         return "Eggshell";
+    }
+    public int isCompostable(){
+        return 1;
+    }
+    public int getClassification(){
+        return classification;
+    }
+    public void setClassification(int c){
+        this.classification = c;
     }
 }

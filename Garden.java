@@ -17,6 +17,7 @@ public class Garden extends Home implements ActionListener{
     int location;
     int buttonPressed = 0;
     boolean gardenButtonPressed = true;
+    int scoreGar = 0;
     public Garden(JButton input){
         this.setPreferredSize(new Dimension(1000,1000));
         Thread main = new Thread(new myRunnable());
@@ -34,6 +35,7 @@ public class Garden extends Home implements ActionListener{
                 repaint();
                 try{
               Thread.sleep(100);
+              //System.out.println(score);
             }
           catch(InterruptedException e){}
         }
@@ -48,16 +50,18 @@ public class Garden extends Home implements ActionListener{
         Image garden = compost.getImage();
 
         g.drawImage(garden, 0, 0, this);
-        checkScore(list);
+        scoreGar = checkScore(list);
+        System.out.println(scoreGar);
+        
       
       for(int i = 0; i < plants.length; i++){
-        if (score < 3){
+        if (scoreGar < 3){
           plants[i].drawUnhealthy(g);
         }
-        if (score > 5){
+        if (scoreGar > 5){
           plants[i].drawHealthy(g);
         }
-       if (score <= 5 && score >= 3) {plants[i].drawSprout(g);}
+       if (scoreGar <= 5 && scoreGar >= 3) {plants[i].drawSprout(g);}
       }
     }
     @Override

@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Orange extends Item{
+    private int classification = -1;
 
     public Orange(int x, int y){
         this.x = x;
@@ -26,5 +27,14 @@ public class Orange extends Item{
     }
     public String toString(){
         return "Orange";
+    }
+    public int isCompostable(){
+        return 1;
+    }
+    public int getClassification(){
+        return classification;
+    }
+    public void setClassification(int c){
+        this.classification = c;
     }
 }

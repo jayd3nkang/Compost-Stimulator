@@ -65,5 +65,4 @@ class Main extends JPanel {
       garden.pack();
     }
 
-   
 }

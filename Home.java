@@ -36,7 +36,7 @@ class Home extends Main{
   int plantNumber = 1;
   public static Item[] list = new Item[8];
   public flower[] plants = new flower[6];
-  int score;
+  //int score;
 
   //using graphics to change the background sky color constantly 
   //as of 4/19/24, 21:52, it can only go through one cycle of
@@ -59,6 +59,7 @@ class Home extends Main{
           cycleEnd = true;
           if(xSun >= 500 && (int)ySun == 799){
             xSun--;
+            //score = 0;
           }
         }
         count++;
@@ -173,26 +174,34 @@ class Home extends Main{
 
   if (yMoon <= 500 && xSun <= 500) play = false;
 }
-  public void checkScore(Item[] list){
-    score = 0;
-    for (int i = 0; i < list.length; i++){
-      if (list[i].l == list[i].p) {
+  public int checkScore(Item[] list){
+    int score = 0;
+    for(int i = 0; i < list.length; i++){
+      System.out.println("classification " + list[i].getClassification() + " " + list[i].isCompostable());
+      if(list[i].getClassification() == list[i].isCompostable()){
+        
         score++;
-        for (int j = 0; j < plants.length; j++){
-          plants[j].state = score;
-        }
       }
     }
+    return score;
+    // for (int i = 0; i < list.length; i++){
+    //   if (list[i].l == list[i].p) {
+    //     score++;
+    //     for (int j = 0; j < plants.length; j++){
+    //       plants[j].state = score;
+    //     }
+    //   }
+    // }
 
     // plantNumber is an int denoting which plant is being drawn
-    if (score >= 5) {
-      for (int i = 0; i < plants.length; i++){
-        plants[i].state = score;
-      }
-    }
-    else for (int i = 0; i < plants.length; i++){
-      plants[i].state--;
-    }
+    // if (score >= 5) {
+    //   for (int i = 0; i < plants.length; i++){
+    //     plants[i].state = score;
+    //   }
+    // }
+    // else for (int i = 0; i < plants.length; i++){
+    //   plants[i].state--;
+    // }
 
   }
 

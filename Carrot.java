@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Carrot extends Item {
+    private int classification = -1;
     public Carrot(int x, int y){
         this.x = x;
         this.y = y;
@@ -25,6 +26,15 @@ public class Carrot extends Item {
     }
     public String toString(){
         return "Carrot";
+    }
+    public int isCompostable(){
+        return 1;
+    }
+    public int getClassification(){
+        return classification;
+    }
+    public void setClassification(int c){
+        this.classification = c;
     }
 
 }

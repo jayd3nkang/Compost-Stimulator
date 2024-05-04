@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Twig extends Item{
+    private int classification = -1;
 
     public Twig(int x, int y){
         this.x = x;
@@ -26,5 +27,14 @@ public class Twig extends Item{
     }
     public String toString(){
         return "Twig";
+    }
+    public int isCompostable(){
+        return 1;
+    }
+    public int getClassification(){
+        return classification;
+    }
+    public void setClassification(int c){
+        this.classification = c;
     }
 }
