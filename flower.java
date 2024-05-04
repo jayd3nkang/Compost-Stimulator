@@ -33,12 +33,12 @@ public class flower extends Main{
         
     }
     public void drawSprout(Graphics g){
-        plant = new ImageIcon("sprout.png");
+        plant = new ImageIcon("flower1.png");
         Image flower = plant.getImage();   
         g.drawImage(flower, x, y, this);
     }
     public void drawHealthy(Graphics g){
-        plant = new ImageIcon("flower.png");
+        plant = new ImageIcon("flower5.png");
         Image flower = plant.getImage();   
         g.drawImage(flower, x, y, this);
     }

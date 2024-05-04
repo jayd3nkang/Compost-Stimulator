@@ -19,7 +19,7 @@ public class coffeebean extends Item{
     }
 
     public void draw(Graphics g){
-        ImageIcon object = new ImageIcon("coffeebean.png");
+        ImageIcon object = new ImageIcon("coffeeBean.png");
         Image pic = object.getImage();
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");

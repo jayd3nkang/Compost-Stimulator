@@ -23,7 +23,7 @@ public class Garden extends Home implements ActionListener{
         main.start();
         nextCycle = input;
         nextCycle.addActionListener(this);
-        ImageIcon compostIcon = new ImageIcon("compostButton.png");
+        ImageIcon compostIcon = new ImageIcon("nextDayButton.png");
         nextCycle.setIcon(compostIcon);
     }
     public class myRunnable implements Runnable{

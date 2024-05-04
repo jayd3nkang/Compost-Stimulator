@@ -31,7 +31,7 @@ public class sortingPopup extends Home implements ActionListener{
 
 
     ImageIcon compostIcon = new ImageIcon("compostButton.png");
-    ImageIcon trashIcon = new ImageIcon("trashButton.png");
+    ImageIcon trashIcon = new ImageIcon("otherButton.png");
 
     compostButton.addActionListener(this);
     compostButton.setIcon(compostIcon);
@@ -75,7 +75,7 @@ public class sortingPopup extends Home implements ActionListener{
 
 
   public Item randomItem(){
-    int r = (int) (Math.random() * 16) + 1;
+    int r = (int) (Math.random() * 40) + 1;
     Item i = new Item();
     if (r == 1) {i = new Carrot(380, 250);};
     if (r == 2) {i = new banana(380, 250);};
@@ -91,8 +91,33 @@ public class sortingPopup extends Home implements ActionListener{
     if (r == 12) {i = new Chips(380, 200);};
     if (r == 13) {i = new book(380, 200);};
     if (r == 14) {i = new can(380, 200);};
-    if (r == 15) {i = new CSteabag(380, 200);};
+    if (r == 15) {i = new teabag(380, 200);};
     if (r == 16) {i = new coffeebean(380, 200);};
+    if (r == 17) {i = new bandaid(380, 250);};
+    if (r == 18) {i = new bread(380, 250);};
+    if (r == 19) {i = new chair(380, 250);};
+    if (r == 20) {i = new cheese(380, 250);};
+    if (r == 21) {i = new cherry(380, 250);};
+    if (r == 22) {i = new chess(380, 250);};
+    if (r == 23) {i = new chocolate(380, 250);};
+    if (r == 24) {i = new coffeeCup(380, 250);};
+    if (r == 25) {i = new dogPoop(380, 250);};
+    if (r == 26) {i = new fish(380, 250);};
+    if (r == 27) {i = new fork(380, 250);};
+    if (r == 28) {i = new waterBottle(380, 200);};
+    if (r == 29) {i = new lawEssay(380, 200);};
+    if (r == 30) {i = new napkin(380, 200);};
+    if (r == 31) {i = new newspaper(380, 200);};
+    if (r == 32) {i = new paperStraw(380, 200);};
+    if (r == 33) {i = new plasticBag(380, 250);};
+    if (r == 34) {i = new plasticStraw(380, 250);};
+    if (r == 35) {i = new rose(380, 250);};
+    if (r == 36) {i = new shirt(380, 250);};
+    if (r == 37) {i = new strawberry(380, 250);};
+    if (r == 38) {i = new takeout(380, 250);};
+    if (r == 39) {i = new pills(380, 250);};
+    if (r == 40) {i = new pizzaBox(380, 250);};
+
     return i;
   }
 

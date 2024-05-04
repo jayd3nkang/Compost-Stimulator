@@ -13,8 +13,8 @@ public class cig extends Item{
     public cig(int x, int y){
         this.x = x;
         this.y = y;
-        this.w = 167;
-        this.h = 80;
+        this.w = 153;
+        this.h = 70;
     }
 
     public void draw(Graphics g){

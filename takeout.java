@@ -8,24 +8,23 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class CSteabag extends Item{
+public class takeout extends Item{
 
-    public CSteabag(int x, int y){
+    public takeout(int x, int y){
         this.x = x;
         this.y = y;
-        this.w = 155;
-        this.h = 126;
+        this.w = 185;
+        this.h = 180;
         this.p = 1;
     }
 
     public void draw(Graphics g){
-        ImageIcon object = new ImageIcon("CS teabag.png");
+        ImageIcon object = new ImageIcon("takeout.png");
         Image pic = object.getImage();
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
-
     public String toString(){
-        return "Teabag";
+        return "Takeout box";
     }
 }
