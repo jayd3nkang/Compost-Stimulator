@@ -19,6 +19,7 @@ public class banana extends Item{
         this.p = 1;
     }
 
+    @Override
     public void draw(Graphics g){
         ImageIcon object = new ImageIcon("banana.png");
         Image pic = object.getImage();
@@ -28,12 +29,17 @@ public class banana extends Item{
     public String toString(){
         return "Banana";
     }
+    @Override
+
     public int isCompostable(){
         return 1;
     }
+    @Override
+
     public int getClassification(){
         return classification;
     }
+    @Override
     public void setClassification(int c){
         this.classification = c;
     }

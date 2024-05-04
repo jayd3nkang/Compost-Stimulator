@@ -58,12 +58,14 @@ public class sortingPopup extends Home implements ActionListener{
             // sorting();
             repaint();
             if (counter >= 7) {
+              counter = 0;
               popEnd = true;
               pop.setVisible(false);
               garden.setVisible(true);
               Main.frame.setVisible(false);
-              counter = 0;
+              Home.score = checkScore();
               generateNewList();
+              updateHomeList();
         }
             try{
           Thread.sleep(10);
@@ -107,12 +109,14 @@ public class sortingPopup extends Home implements ActionListener{
   public void actionPerformed(ActionEvent e) {
     // TODO Auto-generated method stub
     if(e.getSource() == compostButton){
-      counter++;
       list[counter].setClassification(1);
+      //System.out.println(list[counter].toString() + list[counter].getClassification());
+      counter++;
     }
     if(e.getSource() == trashButton){
-      counter++;
       list[counter].setClassification(0);
+     // System.out.println(list[counter].toString() + list[counter].getClassification());
+      counter++;
     }
 
   }
@@ -124,6 +128,14 @@ public class sortingPopup extends Home implements ActionListener{
     }
     for(int i = 0; i < toReturn.length; i++){
       this.list[i] = toReturn[i];
+      System.out.println(list[i].toString());
+    }
+    
+   }
+
+   public void updateHomeList(){
+    for(int i = 0; i < list.length; i++){
+      Home.list[i] = list[i];
     }
    }
 
