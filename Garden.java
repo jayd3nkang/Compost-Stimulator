@@ -72,10 +72,13 @@ public class Garden extends Home implements ActionListener{
       list[buttonPressed].changeLocation(1);
       System.out.println("compost button clicked");
       seeGarden = false;
+      Main.frame.setVisible(true);
       Main.seeG(seeGarden);
       Home.play = true;
       Home.gardenButtonStatus = true;
       buttonPressed  = 0;
+      Home.dayCounter++;
+      Home.index.i = dayCounter;
       
     }
     buttonPressed++;

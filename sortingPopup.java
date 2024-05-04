@@ -61,6 +61,7 @@ public class sortingPopup extends Home implements ActionListener{
               popEnd = true;
               pop.setVisible(false);
               garden.setVisible(true);
+              Main.frame.setVisible(false);
               counter = 0;
               generateNewList();
         }
@@ -124,6 +125,6 @@ public class sortingPopup extends Home implements ActionListener{
     for(int i = 0; i < toReturn.length; i++){
       this.list[i] = toReturn[i];
     }
-  }
+   }
 
 }
