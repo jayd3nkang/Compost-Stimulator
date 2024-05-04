@@ -19,7 +19,7 @@ public class teabag extends Item{
     }
 
     public void draw(Graphics g){
-        ImageIcon object = new ImageIcon("CS teabag.png");
+        ImageIcon object = new ImageIcon("teabag.png");
         Image pic = object.getImage();
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");

@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class plasticBag extends Item{
+    private int classification = -1;
 
     public plasticBag(int x, int y){
         this.x = x;
@@ -26,5 +27,19 @@ public class plasticBag extends Item{
     }
     public String toString(){
         return "Plastic Bag";
+    }
+    @Override
+
+    public int isCompostable(){
+        return 0;
+    }
+    @Override
+
+    public int getClassification(){
+        return classification;
+    }
+    @Override
+    public void setClassification(int c){
+        this.classification = c;
     }
 }
