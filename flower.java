@@ -18,23 +18,26 @@ public class flower extends Main{
         this.x = ex;
         this.y = why;
         this.state = s;
-        // this.plant = new ImageIcon("sprout.png");
-    //     if (this.state < 3) {
-    //         this.y -= 180;
-    //         plant = new ImageIcon("deadFlower.png"); 
-    // }
-
-    //     if (this.state > 4) {
-    //         this.y -= 180;
-    //         plant = new ImageIcon("flower.png"); 
-    //         //System.out.println("DLFKJSDFLJSDLF");
-    //     }
-        //this.flower = this.plant.getImage(); 
         
     }
     public void drawSprout(Graphics g){
         plant = new ImageIcon("flower1.png");
         Image flower = plant.getImage();   
+        g.drawImage(flower, x, y, this);
+    }
+    public void drawFlowerS2(Graphics g){
+        plant = new ImageIcon("flower2.png");
+        Image flower = plant.getImage();
+        g.drawImage(flower, x, y, this);
+    }
+    public void drawFlowerS3(Graphics g){
+        plant = new ImageIcon("flower3.png");
+        Image flower = plant.getImage();
+        g.drawImage(flower, x, y ,this);
+    }
+    public void drawFlowerS4(Graphics g){
+        plant = new ImageIcon("flower4.png");
+        Image flower = plant.getImage();
         g.drawImage(flower, x, y, this);
     }
     public void drawHealthy(Graphics g){
