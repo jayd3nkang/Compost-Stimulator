@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -20,7 +21,10 @@ class Home extends Main{
   double xMoon;
   double yMoon;
 
-  static int counter;
+
+  static int dayCounter;
+  static day index;
+
   int count;
   public static Boolean cycleEnd = false;
   public static boolean gardenButtonStatus = true;
@@ -45,7 +49,7 @@ class Home extends Main{
     public void run(){
       sunDown = false;
       play = true;
-      
+
       while(true){
 
         if (gardenButtonStatus){
@@ -53,6 +57,7 @@ class Home extends Main{
           if(xSun >= 525 && (int)ySun == 799){
             gardenButtonStatus = false;
             pop.setVisible(true);
+            frame.setVisible(false);
           }
         }
         if(!gardenButtonStatus){
@@ -87,7 +92,8 @@ class Home extends Main{
     this.setPreferredSize(new Dimension(1000,1000));
     Thread main = new Thread(new myRunnable());
     main.start();
-    counter = 0;
+    dayCounter = 1;
+    index = new day(800, 50, dayCounter);
 
     // starX = new double[50];
     // starY = new double[50];
@@ -129,7 +135,10 @@ class Home extends Main{
     g.drawImage(iconHouse,0,0,this);
     g.drawImage(iconSun, (int) (xSun - 100), (int)(ySun - 101) + 1000,this);
     g.drawImage(iconMoon, (int) (xMoon + 933),(int) (yMoon - 77.5) ,this);
+    index.paint(g);
+
   }
+
 
   //method that changes from day to night 
   public void cycle(){
@@ -207,4 +216,23 @@ class Home extends Main{
     this.gardenButtonStatus = tf;
   }
 
+}
+class day{
+  public int x;
+  public int y;
+  public int i;
+  public String a;
+
+  public day(int pX, int pY, int day){
+      this.x = pX;
+      this.y = pY;
+      this.i = day;
+  }
+  public void paint(Graphics g){
+      g.setColor(Color.WHITE);
+      g.setFont(new Font("Comic Sans MS", Font.PLAIN, 60));
+      this.a = "Day ";
+      this.a += this.i;
+      g.drawString(this.a, this.x, this.y);
+  }
 }
