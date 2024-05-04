@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -20,8 +21,12 @@ class Home extends Main{
   double xMoon;
   double yMoon;
 
-  static int counter;
+
+  static int dayCounter;
+  static day index;
+
   int count;
+  public static int score;
   public static Boolean cycleEnd = false;
   public static boolean gardenButtonStatus = true;
   boolean sunDown;
@@ -36,7 +41,7 @@ class Home extends Main{
   int plantNumber = 1;
   public static Item[] list = new Item[8];
   public flower[] plants = new flower[6];
-  int score;
+  //int score;
 
   //using graphics to change the background sky color constantly 
   //as of 4/19/24, 21:52, it can only go through one cycle of
@@ -45,7 +50,7 @@ class Home extends Main{
     public void run(){
       sunDown = false;
       play = true;
-      
+
       while(true){
 
         if (gardenButtonStatus){
@@ -53,12 +58,14 @@ class Home extends Main{
           if(xSun >= 525 && (int)ySun == 799){
             gardenButtonStatus = false;
             pop.setVisible(true);
+            frame.setVisible(false);
           }
         }
         if(!gardenButtonStatus){
           cycleEnd = true;
           if(xSun >= 500 && (int)ySun == 799){
             xSun--;
+            //score = 0;
           }
         }
         count++;
@@ -87,26 +94,8 @@ class Home extends Main{
     this.setPreferredSize(new Dimension(1000,1000));
     Thread main = new Thread(new myRunnable());
     main.start();
-    counter = 0;
-
-    // starX = new double[50];
-    // starY = new double[50];
-    // starR = new double[50];
-    // starSize = new double[50];
-
-    // for (int i = 0; i < starR.length; i++){
-    //   starX[i] = Math.random() * 1000;
-    //   starY[i] = (Math.random() * 1000) + 1000;
-    //   starR[i] = Math.random() * 250000 + 10000;
-    //   starSize[i] = Math.random() * 10;
-    // }
-
-    // plants[0] = new flower(15, 370, 0);
-    // plants[1] = new flower(100, 430, 0);
-    // plants[2] = new flower(270, 378, 0);
-    // plants[3] = new flower(470, 380, 0);
-    // plants[4] = new flower(670, 380, 0);
-    // plants[5] = new flower(830, 380, 0);
+    dayCounter = 1;
+    index = new day(800, 50, dayCounter);
     popUpControl = f;  
   }
 //setting up the canvas 
@@ -129,7 +118,10 @@ class Home extends Main{
     g.drawImage(iconHouse,0,0,this);
     g.drawImage(iconSun, (int) (xSun - 100), (int)(ySun - 101) + 1000,this);
     g.drawImage(iconMoon, (int) (xMoon + 933),(int) (yMoon - 77.5) ,this);
+    index.paint(g);
+
   }
+
 
   //method that changes from day to night 
   public void cycle(){
@@ -173,27 +165,15 @@ class Home extends Main{
 
   if (yMoon <= 500 && xSun <= 500) play = false;
 }
-  public void checkScore(Item[] list){
+  public int checkScore(){
     score = 0;
-    for (int i = 0; i < list.length; i++){
-      if (list[i].l == list[i].p) {
+    for(int i = 0; i < list.length-1; i++){
+      System.out.println("classification " + list[i].getClassification() + " " + list[i].isCompostable());
+      if(list[i].getClassification() == list[i].isCompostable()){
         score++;
-        for (int j = 0; j < plants.length; j++){
-          plants[j].state = score;
-        }
       }
     }
-
-    // plantNumber is an int denoting which plant is being drawn
-    if (score >= 5) {
-      for (int i = 0; i < plants.length; i++){
-        plants[i].state = score;
-      }
-    }
-    else for (int i = 0; i < plants.length; i++){
-      plants[i].state--;
-    }
-
+    return score;
   }
 
 
@@ -201,10 +181,78 @@ class Home extends Main{
   public static void getList(Item[] items){
     for (int i = 0; i < list.length; i++){
       list[i] = items[i];
+      System.out.println("Home " + list[i].toString());
     }
   }
   public void setGardenButtonStatus(boolean tf){
     this.gardenButtonStatus = tf;
   }
+  public Item[] getList(){
+    return this.list;
+  }
+  
+ 
 
 }
+class day{
+  public int x;
+  public int y;
+  public int i;
+  public String a;
+
+  public day(int pX, int pY, int day){
+      this.x = pX;
+      this.y = pY;
+      this.i = day;
+  }
+  public void paint(Graphics g){
+      g.setColor(Color.WHITE);
+      g.setFont(new Font("Comic Sans MS", Font.PLAIN, 60));
+      this.a = "Day ";
+      this.a += this.i;
+      g.drawString(this.a, this.x, this.y);
+  }
+
+  
+}
+
+
+
+
+    // for (int i = 0; i < list.length; i++){
+    //   if (list[i].l == list[i].p) {
+    //     score++;
+    //     for (int j = 0; j < plants.length; j++){
+    //       plants[j].state = score;
+    //     }
+    //   }
+    // }
+
+    // plantNumber is an int denoting which plant is being drawn
+    // if (score >= 5) {
+    //   for (int i = 0; i < plants.length; i++){
+    //     plants[i].state = score;
+    //   }
+    // }
+    // else for (int i = 0; i < plants.length; i++){
+    //   plants[i].state--;
+    // }
+
+        // starX = new double[50];
+    // starY = new double[50];
+    // starR = new double[50];
+    // starSize = new double[50];
+
+    // for (int i = 0; i < starR.length; i++){
+    //   starX[i] = Math.random() * 1000;
+    //   starY[i] = (Math.random() * 1000) + 1000;
+    //   starR[i] = Math.random() * 250000 + 10000;
+    //   starSize[i] = Math.random() * 10;
+    // }
+
+    // plants[0] = new flower(15, 370, 0);
+    // plants[1] = new flower(100, 430, 0);
+    // plants[2] = new flower(270, 378, 0);
+    // plants[3] = new flower(470, 380, 0);
+    // plants[4] = new flower(670, 380, 0);
+    // plants[5] = new flower(830, 380, 0);

@@ -8,9 +8,9 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class teabag extends Item{
-
-    public teabag(int x, int y){
+public class CSteabag extends Item{
+    private int classification = -1;
+    public CSteabag(int x, int y){
         this.x = x;
         this.y = y;
         this.w = 155;
@@ -19,7 +19,7 @@ public class teabag extends Item{
     }
 
     public void draw(Graphics g){
-        ImageIcon object = new ImageIcon("teabag.png");
+        ImageIcon object = new ImageIcon("CS teabag.png");
         Image pic = object.getImage();
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
@@ -27,5 +27,14 @@ public class teabag extends Item{
 
     public String toString(){
         return "Teabag";
+    }
+    public int isCompostable(){
+        return 1;
+    }
+    public int getClassification(){
+        return classification;
+    }
+    public void setClassification(int c){
+        this.classification = c;
     }
 }

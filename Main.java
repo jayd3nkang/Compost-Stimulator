@@ -23,9 +23,9 @@ class Main extends JPanel {
 
     }
 
-    public static void popupEnd(boolean popEnd){
-      pop.setVisible(!popEnd);
-    }
+    // public static void popupEnd(boolean popEnd){
+    //   pop.setVisible(!popEnd);
+    // }
     public static void seeG(boolean seeGarden){
       garden.setVisible(seeGarden);
     }
@@ -65,5 +65,4 @@ class Main extends JPanel {
       garden.pack();
     }
 
-   
 }
