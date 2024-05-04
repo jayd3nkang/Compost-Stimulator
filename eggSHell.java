@@ -30,7 +30,7 @@ public class eggSHell extends Item{
         // TODO Auto-generated method stub
         //throw new UnsupportedOperationException("Unimplemented method 'draw'");
     }
-    // public void isCompostable(){
-    //     this.p = 1;
-    // }
+    public String toString(){
+        return "Eggshell";
+    }
 }

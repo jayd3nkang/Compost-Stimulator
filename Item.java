@@ -33,5 +33,8 @@ public class Item extends Main{
     public void changeLocation(int loc){
         this.l = loc;
     }
+    public String toString(){
+        return "";
+    }
     
 }

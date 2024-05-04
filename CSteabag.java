@@ -24,4 +24,8 @@ public class CSteabag extends Item{
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
+
+    public String toString(){
+        return "Teabag";
+    }
 }

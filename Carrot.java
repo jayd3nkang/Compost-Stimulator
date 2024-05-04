@@ -21,10 +21,10 @@ public class Carrot extends Item {
         ImageIcon carrot = new ImageIcon("carrot.png");
         Image pic = carrot.getImage();
         g.drawImage(pic, x, y, this);
-        System.out.println("hello");
+       
     }
-    // public void isCompostable(){
-    //     this.p = 1;
-    // }
+    public String toString(){
+        return "Carrot";
+    }
 
 }

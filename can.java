@@ -18,9 +18,12 @@ public class can extends Item{
     }
 
     public void draw(Graphics g){
-        ImageIcon object = new ImageIcon("book.png");
+        ImageIcon object = new ImageIcon("can.png");
         Image pic = object.getImage();
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
+    }
+    public String toString(){
+        return "Can";
     }
 }

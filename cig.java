@@ -23,4 +23,7 @@ public class cig extends Item{
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
+    public String toString(){
+        return "Cigarette";
+    }
 }

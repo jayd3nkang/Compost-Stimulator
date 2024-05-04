@@ -10,13 +10,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class sortingPopup extends Home implements ActionListener{
-    static JFrame frame;
     Boolean sorted = false;
-    Carrot carrot;
     // list of items to be sorted every cycle
     public static Item[] list;
+
     JButton compostButton;
     JButton trashButton;
+
     int counter = 0;
     public static Boolean popEnd = false;
 
@@ -27,12 +27,17 @@ public class sortingPopup extends Home implements ActionListener{
   public sortingPopup(JButton input, JButton input2){
     compostButton = input;
     trashButton = input2;
+
+
+
     ImageIcon compostIcon = new ImageIcon("compostButton.png");
     ImageIcon trashIcon = new ImageIcon("trashButton.png");
+
     compostButton.addActionListener(this);
     compostButton.setIcon(compostIcon);
     trashButton.addActionListener(this);
     trashButton.setIcon(trashIcon);
+
     this.setPreferredSize(new Dimension(800,600));
 
     list = new Item[8];
@@ -40,7 +45,6 @@ public class sortingPopup extends Home implements ActionListener{
       list[i] = randomItem();
     }
     Home.getList(list);
-
 
     Thread main = new Thread(new myRunnable());
     main.start();
@@ -50,29 +54,25 @@ public class sortingPopup extends Home implements ActionListener{
     public void run(){
         // every cycle, 8 items will need to be sorted
         // popup goes through every item with a description of all the items
-        // list = new Item[8];
-        // for (int i = 0; i < list.length; i++){
-        //     list[i] = randomItem();
-        // }
         while(true){
             // sorting();
             repaint();
             if (counter >= 7) {
               popEnd = true;
-              Main.popupEnd(popEnd);
+              pop.setVisible(false);
+              garden.setVisible(true);
               counter = 0;
+              generateNewList();
         }
             try{
-          Thread.sleep(100);
+          Thread.sleep(10);
         }
       catch(InterruptedException e){}
     }
       }
      
   }
-  // public void sorting(){
-  //   // check if the user is clicking the right button
-  // }
+
 
   public Item randomItem(){
     int r = (int) (Math.random() * 16) + 1;
@@ -100,43 +100,28 @@ public class sortingPopup extends Home implements ActionListener{
     g.setColor(new Color(200,210,200));
     g.fillRect(0, 0, 800, 500);
     list[counter].draw(g);
-    //list[counter].draw(g);
-    // ImageIcon compostButton = new ImageIcon("compostButton.png");
-    // ImageIcon trashButton = new ImageIcon("trashButton.png");
-    // Image cb = compostButton.getImage();
-    // Image tb = trashButton.getImage();
-    // g.drawImage(cb, 50, 250, this);
-    // g.drawImage(tb, 380, 250, this);
-    // for (int i = 0; i < list.length; i++){
-    //   list[i].x = 400 - (list[i].w/2);
-    //   list[i].y = 30;
-    //   list[i].draw(g);
-    //   System.out.println(list[i].toString());
-    //   while (sorted){}
-    // }
   }
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    //int counter = 0;
     // TODO Auto-generated method stub
     if(e.getSource() == compostButton){
-      //placeboC+=0.5;
       counter++;
-      list[buttonPressed].changeLocation(1);
-      System.out.println("compost button clicked");
-      // if(counter > 2){
-      //   System.exit(1);
-      // }
     }
     if(e.getSource() == trashButton){
       counter++;
-      System.out.println("trash button clicked");
-      list[buttonPressed].changeLocation(0);
-
     }
-    buttonPressed++;
-    //throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+
+  }
+  //creates a new set of items for the user(s) to sort through
+  public void generateNewList(){
+    Item[] toReturn = new Item[8];
+    for(int i = 0; i < toReturn.length; i++){
+      toReturn[i] = randomItem();
+    }
+    for(int i = 0; i < toReturn.length; i++){
+      this.list[i] = toReturn[i];
+    }
   }
 
 }
