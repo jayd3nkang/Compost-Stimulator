@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class takeout extends Item{
+    private int classification = -1;
 
     public takeout(int x, int y){
         this.x = x;
@@ -26,5 +27,19 @@ public class takeout extends Item{
     }
     public String toString(){
         return "Takeout box";
+    }
+    @Override
+
+    public int isCompostable(){
+        return 1;
+    }
+    @Override
+
+    public int getClassification(){
+        return classification;
+    }
+    @Override
+    public void setClassification(int c){
+        this.classification = c;
     }
 }
