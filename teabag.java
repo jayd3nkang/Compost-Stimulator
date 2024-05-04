@@ -8,9 +8,9 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class CSteabag extends Item{
+public class teabag extends Item{
     private int classification = -1;
-    public CSteabag(int x, int y){
+    public teabag(int x, int y){
         this.x = x;
         this.y = y;
         this.w = 155;
