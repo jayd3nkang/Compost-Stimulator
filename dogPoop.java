@@ -20,7 +20,7 @@ public class dogPoop extends Item{
     }
 
     public void draw(Graphics g){
-        ImageIcon object = new ImageIcon("dogPop.png");
+        ImageIcon object = new ImageIcon("dogPoop.png");
         Image pic = object.getImage();
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");

@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -47,8 +48,14 @@ class Main extends JPanel {
       pop.setLayout(null);
       
   
-      compostButton.setBounds(50,450,265,160);
-      trashButton.setBounds(450,450,265,160);
+      compostButton.setBounds(50,450,245,137);
+      compostButton.setBorderPainted(false);
+      compostButton.setFocusable(false);
+      compostButton.setBackground(new Color(241,246,220));
+      trashButton.setBounds(450,450,247,143);
+      trashButton.setBorderPainted(false);
+      trashButton.setFocusable(false);
+      trashButton.setBackground(new Color(241,246,220));
       pop.add(compostButton);
       pop.add(trashButton);
       //button.addActionListener(popup);
@@ -56,7 +63,11 @@ class Main extends JPanel {
       pop.pack();
   
       JButton newCycleButton = new JButton();
-      newCycleButton.setBounds(500, 200, 400, 200);
+      newCycleButton.setBounds(650, 80, 250, 140);
+      newCycleButton.setBorderPainted(false);
+      newCycleButton.setOpaque(true);
+      newCycleButton.setBackground(new Color(152,231,177));
+      newCycleButton.setFocusable(false);
       Garden gar = new Garden(newCycleButton);
       garden.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       garden.setContentPane(gar);

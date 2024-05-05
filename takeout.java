@@ -31,7 +31,7 @@ public class takeout extends Item{
     @Override
 
     public int isCompostable(){
-        return 1;
+        return 0;
     }
     @Override
 
