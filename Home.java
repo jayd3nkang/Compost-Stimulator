@@ -27,6 +27,7 @@ class Home extends Main{
 
   int count;
   public static int score;
+  public static int totalScore;
   public static Boolean cycleEnd = false;
   public static boolean gardenButtonStatus = true;
   boolean sunDown;
@@ -128,12 +129,8 @@ class Home extends Main{
     if (!sunDown) {
       xSun += 5;
       xMoon -= 5;
-
     }
-
     ySun = -1 * (Math.sqrt(640000 - Math.pow((xSun - 500), 2)));
-
-
 
   if (xSun >= 1000) sunDown = true;
 
@@ -172,7 +169,11 @@ class Home extends Main{
       if(list[i].getClassification() == list[i].isCompostable()){
         score++;
       }
+      else{
+        totalScore--;
+      }
     }
+    totalScore+=score;
     return score;
   }
 

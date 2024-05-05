@@ -56,17 +56,30 @@ public class Garden extends Home implements ActionListener{
         
         scores = Home.score;
 
-        System.out.println(scores);
+        System.out.println("this round score" + scores + " total " + totalScore);
         
       
       for(int i = 0; i < plants.length; i++){
-        if (scores < 3){
+        if(Home.totalScore < 0){
           plants[i].drawUnhealthy(g);
         }
+        if (Home.totalScore >= 0 && Home.totalScore <=7){
+          plants[i].drawSprout(g);
+        }
+        if(Home.totalScore > 7 && Home.totalScore <= 14){
+          plants[i].drawFlowerS2(g);
+        }
+        if(Home.totalScore > 14 && Home.totalScore <= 21)
         if (scores > 5){
+          plants[i].drawFlowerS3(g);
+        }
+        if(Home.totalScore > 21 && Home.totalScore <= 29){
+          plants[i].drawFlowerS4(g);
+        }
+        if(Home.totalScore >= 30){
           plants[i].drawHealthy(g);
         }
-       if (scores <= 5 && scores >= 3) {plants[i].drawSprout(g);}
+       //if (scores <= 5 && scores >= 3) {plants[i].drawSprout(g);}
       }
     }
     @Override
