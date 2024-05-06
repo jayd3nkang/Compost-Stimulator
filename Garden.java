@@ -138,6 +138,52 @@ public class Garden extends Home implements ActionListener{
       showSummary = true;
       nextCycle.setVisible(false);
       endSummary.setVisible(true);
+      for (int i = 0; i < list.length; i++) {
+        list[i].x = 320;
+        list[i].y = 180;
+        // for (int r = 0; r < 40; r++){
+        //   if (r == 1) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 2) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 3) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 4) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 5) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 6) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 7) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 8) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 9) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 10) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 11) {list[i].x = 350; list[i].y = 200;}
+        //   if (r == 12) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 13) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 14) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 15) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 16) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 17) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 18) {list[i].x = 330; list[i].y = 200;}
+        //   if (r == 19) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 20) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 21) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 22) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 23) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 24) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 25) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 26) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 27) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 28) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 29) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 30) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 31) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 32) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 33) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 34) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 35) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 36) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 37) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 38) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 39) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 40) {list[i].x = 310; list[i].y = 180;}
+        // }
+      }
 
     }
     if(e.getSource() == endSummary){
