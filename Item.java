@@ -25,10 +25,9 @@ public  class Item extends Main{
         return 0;
     }
     public void setClassification(int c){
-
     }
     public int getClassification(){
-        return 0;
+        return -1;
     }
     // draw method will be different for every object
     public void draw(Graphics g){
@@ -47,8 +46,5 @@ public  class Item extends Main{
     public void changeLocation(int loc){
         this.l = loc;
     }
-    //public abstract void draw();
-    //public abstract 
-    //public abstract String toString();
     
 }

@@ -83,12 +83,12 @@ class Home extends Main{
   //the cycle change can happen
   //haven't implemented the moving of sun and car moving yet
   public Home(){
-    plants[0] = new flower(15, 320, 0);
-    plants[1] = new flower(120, 380, 0);
-    plants[2] = new flower(280, 328, 0);
-    plants[3] = new flower(470, 325, 0);
-    plants[4] = new flower(680, 330, 0);
-    plants[5] = new flower(845, 340, 0);
+    plants[0] = new flower(15, 305, 0);
+    plants[1] = new flower(120, 365, 0);
+    plants[2] = new flower(280, 325, 0);
+    plants[3] = new flower(470, 310, 0);
+    plants[4] = new flower(680, 315, 0);
+    plants[5] = new flower(845, 325, 0);
   }
   public Home(JFrame f){
     this();
@@ -96,7 +96,7 @@ class Home extends Main{
     Thread main = new Thread(new myRunnable());
     main.start();
     dayCounter = 1;
-    index = new day(750, 80, dayCounter);
+    index = new day(750, 100, dayCounter);
     popUpControl = f;  
   }
 //setting up the canvas 
