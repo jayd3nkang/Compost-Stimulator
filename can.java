@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class can extends Item{
+public class can extends Item implements Goods{
     private int classification = -1;
 
     public can(int x, int y){

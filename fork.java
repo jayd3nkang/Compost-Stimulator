@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class fork extends Item{
+public class fork extends Item implements Goods{
     private int classification = -1;
 
     public fork(int x, int y){

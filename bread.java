@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class bread extends Item{
+public class bread extends Item implements Goods{
     private int classification = -1;
 
 
