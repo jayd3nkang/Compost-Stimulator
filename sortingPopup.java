@@ -80,6 +80,7 @@ public class sortingPopup extends Home implements ActionListener{
 
   public Item randomItem(){
     int r = (int) (Math.random() * 40) + 1;
+    // r = 30;
     Item i = new Item();
     if (r == 1) {i = new Carrot(320, 180);};
     if (r == 2) {i = new banana(320, 180);};
