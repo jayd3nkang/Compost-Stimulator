@@ -32,10 +32,11 @@ public class Garden extends Home implements ActionListener{
         nextCycle = input;
         nextCycle.addActionListener(this);
         ImageIcon compostIcon = new ImageIcon("nextDayButton.png");
+        ImageIcon toGarden = new ImageIcon("toGardenButton.png");
         nextCycle.setIcon(compostIcon);
         endSummary = input2;
         endSummary.addActionListener(this);
-        endSummary.setIcon(compostIcon);
+        endSummary.setIcon(toGarden);
         showSummary = true;
     }
     public class myRunnable implements Runnable{
@@ -82,7 +83,6 @@ public class Garden extends Home implements ActionListener{
         progression = 0;
       }
       if (showSummary) {
-        int showScore = 0;
         ImageIcon summary = new ImageIcon("summaryBackground.png");
         Image eodSum = summary.getImage();
         ImageIcon check = new ImageIcon("right.png");
@@ -110,7 +110,6 @@ public class Garden extends Home implements ActionListener{
           list[i].drawSmall(g);
           if (list[i].l == list[i].p) {
             g.drawImage(right, list[i].x + 150, list[i].y + 24, this);
-            showScore++;
           }
           else {
             g.drawImage(wrong, list[i].x + 150, list[i].y + 24, this);
@@ -118,7 +117,7 @@ public class Garden extends Home implements ActionListener{
         }
         g.setFont(new Font("Comic Sans MS",Font.PLAIN,40));
           g.setColor(Color.BLACK);
-          g.drawString(showScore + " / 8", 680, 760);
+          g.drawString(scores + " / 8", 680, 760);
       }
     }
   @Override

@@ -107,7 +107,7 @@ public class flower extends Main{
 
 
     public void drawUnhealthy(Graphics g){
-        ImageIcon plant = new ImageIcon("deadFlower(1).png");
+        ImageIcon plant = new ImageIcon("deadFlower(3).png");
         Image flower = plant.getImage();   
         g.drawImage(flower, x, y, this);
     }
@@ -117,7 +117,7 @@ public class flower extends Main{
         g.drawImage(flower, x, y, this);
     }
     public void drawUnhealthyS3(Graphics g){
-        ImageIcon plant = new ImageIcon("deadFlower(3).png");
+        ImageIcon plant = new ImageIcon("deadFlower(1).png");
         Image flower = plant.getImage();   
         g.drawImage(flower, x, y, this);
     }

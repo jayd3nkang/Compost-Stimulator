@@ -70,7 +70,7 @@ class Main extends JPanel {
       newCycleButton.setFocusable(false);
       newCycleButton.setVisible(false);
       JButton endSummaryButton = new JButton();
-      endSummaryButton.setBounds(220,650,250,140);
+      endSummaryButton.setBounds(220,680,250,140);
       endSummaryButton.setBorderPainted(false);
       endSummaryButton.setOpaque(false);
       endSummaryButton.setBackground(new Color(241,246,220));
