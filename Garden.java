@@ -16,6 +16,7 @@ public class Garden extends Home implements ActionListener{
     JButton nextCycle;
     int location;
     int buttonPressed = 0;
+    int progression = 0;
     boolean gardenButtonPressed = true;
    // Item[] copyList = new Item[8];
     int scores;
@@ -35,7 +36,7 @@ public class Garden extends Home implements ActionListener{
                 // sorting();
                 repaint();
                 try{
-              Thread.sleep(100);
+              Thread.sleep(500);
               //System.out.println(score);
             }
           catch(InterruptedException e){}
@@ -53,36 +54,25 @@ public class Garden extends Home implements ActionListener{
         Image garden = compost.getImage();
         g.drawImage(garden, 0, 0, this);
 
-        
         scores = Home.score;
-
-        System.out.println("this round score" + scores + " total " + totalScore);
         
+      if(progression == 0){
+        drawStageOne(g);
+      }
       
-      for(int i = 0; i < plants.length; i++){
-        if(Home.totalScore < 0){
-          plants[i].drawUnhealthy(g);
-        }
-        if (Home.totalScore >= 0 && Home.totalScore <=7){
-          plants[i].drawSprout(g);
-        }
-        if(Home.totalScore > 7 && Home.totalScore <= 14){
-          plants[i].drawFlowerS2(g);
-        }
-        if(Home.totalScore > 14 && Home.totalScore <= 21)
-        if (scores > 5){
-          plants[i].drawFlowerS3(g);
-        }
-        if(Home.totalScore > 21 && Home.totalScore <= 29){
-          plants[i].drawFlowerS4(g);
-        }
-        if(Home.totalScore >= 30){
-          plants[i].drawHealthy(g);
-        }
-       //if (scores <= 5 && scores >= 3) {plants[i].drawSprout(g);}
+      if(progression == 1){
+        drawStageTwo(g);
+      }
+      
+      if(progression == 2){
+        drawStageThree(g);
+      }
+      progression++;
+      if(progression > 2){
+        progression = 0;
       }
     }
-    @Override
+  @Override
   public void actionPerformed(ActionEvent e) {
 
     if(e.getSource() == nextCycle){
@@ -100,6 +90,78 @@ public class Garden extends Home implements ActionListener{
       
     }
     buttonPressed++;
+  }
+
+  public void drawStageOne(Graphics g){
+    for(int i = 0; i < plants.length; i++){
+      if(Home.totalScore < 0){
+        plants[i].drawUnhealthy(g);
+      }
+      if (Home.totalScore >= 0 && Home.totalScore <=7){
+        plants[i].drawSprout(g);
+      }
+      if(Home.totalScore > 7 && Home.totalScore <= 14){
+        plants[i].drawFlowerS2(g);
+      }
+      if(Home.totalScore > 14 && Home.totalScore <= 21)
+      if (scores > 5){
+        plants[i].drawFlowerS3(g);
+      }
+      if(Home.totalScore > 21 && Home.totalScore <= 29){
+        plants[i].drawFlowerS4(g);
+      }
+      if(Home.totalScore >= 30){
+        plants[i].drawHealthy(g);
+      }
+    }
+  }
+
+  public void drawStageTwo(Graphics g){
+    for(int i = 0; i < plants.length; i++){
+      if(Home.totalScore < 0){
+        plants[i].drawUnhealthy(g);
+      }
+      if (Home.totalScore >= 0 && Home.totalScore <=7){
+        plants[i].drawSproutS2(g);
+      }
+      if(Home.totalScore > 7 && Home.totalScore <= 14){
+        plants[i].drawFlowerS2S2(g);
+      }
+      if(Home.totalScore > 14 && Home.totalScore <= 21)
+      if (scores > 5){
+        plants[i].drawFlowerS3(g);
+      }
+      if(Home.totalScore > 21 && Home.totalScore <= 29){
+        plants[i].drawFlowerS4(g);
+      }
+      if(Home.totalScore >= 30){
+        plants[i].drawHealthy(g);
+      }
+    }
+  }
+
+  public void drawStageThree(Graphics g){
+    for(int i = 0; i < plants.length; i++){
+      if(Home.totalScore < 0){
+        plants[i].drawUnhealthy(g);
+      }
+      if (Home.totalScore >= 0 && Home.totalScore <=7){
+        plants[i].drawSproutS3(g);
+      }
+      if(Home.totalScore > 7 && Home.totalScore <= 14){
+        plants[i].drawFlowerS2S3(g);
+      }
+      if(Home.totalScore > 14 && Home.totalScore <= 21)
+      if (scores > 5){
+        plants[i].drawFlowerS3(g);
+      }
+      if(Home.totalScore > 21 && Home.totalScore <= 29){
+        plants[i].drawFlowerS4(g);
+      }
+      if(Home.totalScore >= 30){
+        plants[i].drawHealthy(g);
+      }
+    }
   }
   
 

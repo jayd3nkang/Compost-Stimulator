@@ -11,7 +11,7 @@ public class flower extends Main{
     int x;
     int y;
     public int state;
-    ImageIcon plant;
+
     
     
     public flower(int ex, int why, int s){
@@ -21,32 +21,58 @@ public class flower extends Main{
         
     }
     public void drawSprout(Graphics g){
-        plant = new ImageIcon("flower1.png");
+        ImageIcon plant = new ImageIcon("flower1(1).png");
         Image flower = plant.getImage();   
         g.drawImage(flower, x, y, this);
     }
+    public void drawSproutS2(Graphics g){
+        ImageIcon plant = new ImageIcon("flower1(2).png");
+        Image flower = plant.getImage();   
+        g.drawImage(flower, x, y, this);
+    }
+    public void drawSproutS3(Graphics g){
+        ImageIcon plant = new ImageIcon("flower1(3).png");
+        Image flower = plant.getImage();   
+        g.drawImage(flower, x, y, this);
+    }
+
+
     public void drawFlowerS2(Graphics g){
-        plant = new ImageIcon("flower2.png");
+        ImageIcon plant = new ImageIcon("flower2(1).png");
         Image flower = plant.getImage();
         g.drawImage(flower, x, y, this);
     }
+    public void drawFlowerS2S2(Graphics g){
+        ImageIcon plant = new ImageIcon("flower2(2).png");
+        Image flower = plant.getImage();
+        g.drawImage(flower, x, y, this);
+    }
+    public void drawFlowerS2S3(Graphics g){
+        ImageIcon plant = new ImageIcon("flower2(3).png");
+        Image flower = plant.getImage();
+        g.drawImage(flower, x, y, this);
+    }
+    
+
+
+
     public void drawFlowerS3(Graphics g){
-        plant = new ImageIcon("flower3.png");
+        ImageIcon plant = new ImageIcon("flower3.png");
         Image flower = plant.getImage();
         g.drawImage(flower, x, y ,this);
     }
     public void drawFlowerS4(Graphics g){
-        plant = new ImageIcon("flower4.png");
+        ImageIcon plant = new ImageIcon("flower4.png");
         Image flower = plant.getImage();
         g.drawImage(flower, x, y, this);
     }
     public void drawHealthy(Graphics g){
-        plant = new ImageIcon("flower5.png");
+        ImageIcon plant = new ImageIcon("flower5.png");
         Image flower = plant.getImage();   
         g.drawImage(flower, x, y, this);
     }
     public void drawUnhealthy(Graphics g){
-        plant = new ImageIcon("deadFlower.png");
+        ImageIcon plant = new ImageIcon("deadFlower.png");
         Image flower = plant.getImage();   
         g.drawImage(flower, x, y, this);
     }
