@@ -223,8 +223,7 @@ public class Garden extends Home implements ActionListener{
   public void drawStageTwo(Graphics g){
     for(int i = 0; i < plants.length; i++){
       if(Home.totalScore < 0){
-        plants[i].drawUnhealthy(g);
-        //plants[i].drawUnhealthyS2(g);
+        plants[i].drawUnhealthyS2(g);
       }
       if (Home.totalScore >= 0 && Home.totalScore <=7){
         plants[i].drawSproutS2(g);
@@ -240,8 +239,7 @@ public class Garden extends Home implements ActionListener{
         plants[i].drawFlowerS4S2(g);
       }
       if(Home.totalScore > 29){
-        plants[i].drawHealthy(g);
-        //plants[i].drawHealthyS2(g);
+        plants[i].drawHealthyS2(g);
       }
     }
   }
@@ -249,8 +247,7 @@ public class Garden extends Home implements ActionListener{
   public void drawStageThree(Graphics g){
     for(int i = 0; i < plants.length; i++){
       if(Home.totalScore < 0){
-        plants[i].drawUnhealthy(g);
-        //plants[i].drawUnhealthyS3(g);
+        plants[i].drawUnhealthyS3(g);
       }
       if (Home.totalScore >= 0 && Home.totalScore <=7){
         plants[i].drawSproutS3(g);
@@ -266,8 +263,7 @@ public class Garden extends Home implements ActionListener{
         plants[i].drawFlowerS4S3(g);
       }
       if(Home.totalScore > 29){
-        plants[i].drawHealthy(g);
-        //plants[i].drawHealthyS3(g);
+        plants[i].drawHealthyS3(g);
       }
     }
   }
