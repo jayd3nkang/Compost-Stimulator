@@ -114,10 +114,10 @@ public class Garden extends Home implements ActionListener{
           else {
             g.drawImage(wrong, list[i].x + 150, list[i].y + 24, this);
           }
-          g.setFont(new Font("Comic Sans MS",Font.PLAIN,40));
+        }
+        g.setFont(new Font("Comic Sans MS",Font.PLAIN,40));
           g.setColor(Color.BLACK);
           g.drawString(showScore + " / 8", 680, 760);
-        }
       }
     }
   @Override
