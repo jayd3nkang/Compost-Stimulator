@@ -33,6 +33,9 @@ public  class Item extends Main{
     // draw method will be different for every object
     public void draw(Graphics g){
     }
+    public void drawSmall(Graphics g){
+        
+    }
     // default is false but each object can have its own compostability
     // public void isCompostable(){
     //     // 0 means its not compostable, 1 means it is compostable

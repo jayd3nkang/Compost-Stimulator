@@ -65,14 +65,22 @@ class Main extends JPanel {
       JButton newCycleButton = new JButton();
       newCycleButton.setBounds(650, 80, 250, 140);
       newCycleButton.setBorderPainted(false);
-      newCycleButton.setOpaque(true);
+      newCycleButton.setOpaque(false);
       newCycleButton.setBackground(new Color(152,231,177));
       newCycleButton.setFocusable(false);
-      Garden gar = new Garden(newCycleButton);
+      newCycleButton.setVisible(false);
+      JButton endSummaryButton = new JButton();
+      endSummaryButton.setBounds(220,650,250,140);
+      endSummaryButton.setBorderPainted(false);
+      endSummaryButton.setOpaque(false);
+      endSummaryButton.setBackground(new Color(241,246,220));
+      endSummaryButton.setFocusable(false);
+      Garden gar = new Garden(newCycleButton, endSummaryButton);
       garden.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       garden.setContentPane(gar);
       garden.setLayout(null);
       garden.add(newCycleButton);
+      garden.add(endSummaryButton);
       garden.pack();
     }
 
