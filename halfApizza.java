@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class halfApizza extends Item{
+public class halfApizza extends Item implements Goods{
     private int classification = -1;
 
     public halfApizza(int x, int y){
