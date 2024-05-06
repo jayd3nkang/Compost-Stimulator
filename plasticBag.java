@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class plasticBag extends Item{
+public class plasticBag extends Item implements Goods{
     private int classification = -1;
 
     public plasticBag(int x, int y){

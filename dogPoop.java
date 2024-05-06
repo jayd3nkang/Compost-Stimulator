@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class dogPoop extends Item{
+public class dogPoop extends Item implements Goods{
     private int classification = -1;
 
     public dogPoop(int x, int y){

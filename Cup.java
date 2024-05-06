@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class Cup extends Item{
+public class Cup extends Item implements Goods{
     private int classification = -1;
 
     public Cup(int x, int y){

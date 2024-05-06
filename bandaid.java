@@ -8,7 +8,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class bandaid extends Item{
+public class bandaid extends Item implements Goods{
     private int classification = -1;
 
     public bandaid(int x, int y){
