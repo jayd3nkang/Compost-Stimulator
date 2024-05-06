@@ -135,7 +135,10 @@ public class Garden extends Home implements ActionListener{
       buttonPressed  = 0;
       Home.dayCounter++;
       Home.index.i = dayCounter;
-      
+      showSummary = true;
+      nextCycle.setVisible(false);
+      endSummary.setVisible(true);
+
     }
     if(e.getSource() == endSummary){
       showSummary = false;
