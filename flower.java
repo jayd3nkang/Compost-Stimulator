@@ -57,23 +57,68 @@ public class flower extends Main{
 
 
     public void drawFlowerS3(Graphics g){
-        ImageIcon plant = new ImageIcon("flower3.png");
+        ImageIcon plant = new ImageIcon("flower3(1).png");
         Image flower = plant.getImage();
         g.drawImage(flower, x, y ,this);
     }
+    public void drawFlowerS3S2(Graphics g){
+        ImageIcon plant = new ImageIcon("flower3(2).png");
+        Image flower = plant.getImage();
+        g.drawImage(flower, x, y ,this);
+    }
+    public void drawFlowerS3S3(Graphics g){
+        ImageIcon plant = new ImageIcon("flower3(3).png");
+        Image flower = plant.getImage();
+        g.drawImage(flower, x, y ,this);
+    }
+
+
     public void drawFlowerS4(Graphics g){
-        ImageIcon plant = new ImageIcon("flower4.png");
+        ImageIcon plant = new ImageIcon("flower4(1).png");
         Image flower = plant.getImage();
         g.drawImage(flower, x, y, this);
     }
+    public void drawFlowerS4S2(Graphics g){
+        ImageIcon plant = new ImageIcon("flower4(2).png");
+        Image flower = plant.getImage();
+        g.drawImage(flower, x, y, this);
+    }
+    public void drawFlowerS4S3(Graphics g){
+        ImageIcon plant = new ImageIcon("flower4(3).png");
+        Image flower = plant.getImage();
+        g.drawImage(flower, x, y, this);
+    }
+
     public void drawHealthy(Graphics g){
-        ImageIcon plant = new ImageIcon("flower5.png");
+        ImageIcon plant = new ImageIcon("flower5(1).png");
         Image flower = plant.getImage();   
         g.drawImage(flower, x, y, this);
     }
+    // public void drawHealthyS2(Graphics g){
+    //     ImageIcon plant = new ImageIcon("flower5(2).png");
+    //     Image flower = plant.getImage();   
+    //     g.drawImage(flower, x, y, this);
+    // }
+    // public void drawHealthyS3(Graphics g){
+    //     ImageIcon plant = new ImageIcon("flower5(3).png");
+    //     Image flower = plant.getImage();   
+    //     g.drawImage(flower, x, y, this);
+    // }
+
+
     public void drawUnhealthy(Graphics g){
-        ImageIcon plant = new ImageIcon("deadFlower.png");
+        ImageIcon plant = new ImageIcon("deadFlower(1).png");
         Image flower = plant.getImage();   
         g.drawImage(flower, x, y, this);
     }
+    // public void drawUnhealthyS2(Graphics g){
+    //     ImageIcon plant = new ImageIcon("deadFlower(2).png");
+    //     Image flower = plant.getImage();   
+    //     g.drawImage(flower, x, y, this);
+    // }
+    // public void drawUnhealthyS3(Graphics g){
+    //     ImageIcon plant = new ImageIcon("deadFlower(3).png");
+    //     Image flower = plant.getImage();   
+    //     g.drawImage(flower, x, y, this);
+    // }
 }

@@ -36,7 +36,7 @@ public class Garden extends Home implements ActionListener{
                 // sorting();
                 repaint();
                 try{
-              Thread.sleep(500);
+              Thread.sleep(300);
               //System.out.println(score);
             }
           catch(InterruptedException e){}
@@ -55,6 +55,7 @@ public class Garden extends Home implements ActionListener{
         g.drawImage(garden, 0, 0, this);
 
         scores = Home.score;
+        System.out.println("Scores: " + scores + " Total Score " + Home.totalScore);
         
       if(progression == 0){
         drawStageOne(g);
@@ -110,7 +111,7 @@ public class Garden extends Home implements ActionListener{
       if(Home.totalScore > 21 && Home.totalScore <= 29){
         plants[i].drawFlowerS4(g);
       }
-      if(Home.totalScore >= 30){
+      if(Home.totalScore > 29){
         plants[i].drawHealthy(g);
       }
     }
@@ -120,6 +121,7 @@ public class Garden extends Home implements ActionListener{
     for(int i = 0; i < plants.length; i++){
       if(Home.totalScore < 0){
         plants[i].drawUnhealthy(g);
+        //plants[i].drawUnhealthyS2(g);
       }
       if (Home.totalScore >= 0 && Home.totalScore <=7){
         plants[i].drawSproutS2(g);
@@ -129,13 +131,14 @@ public class Garden extends Home implements ActionListener{
       }
       if(Home.totalScore > 14 && Home.totalScore <= 21)
       if (scores > 5){
-        plants[i].drawFlowerS3(g);
+        plants[i].drawFlowerS3S2(g);
       }
       if(Home.totalScore > 21 && Home.totalScore <= 29){
-        plants[i].drawFlowerS4(g);
+        plants[i].drawFlowerS4S2(g);
       }
-      if(Home.totalScore >= 30){
+      if(Home.totalScore > 29){
         plants[i].drawHealthy(g);
+        //plants[i].drawHealthyS2(g);
       }
     }
   }
@@ -144,6 +147,7 @@ public class Garden extends Home implements ActionListener{
     for(int i = 0; i < plants.length; i++){
       if(Home.totalScore < 0){
         plants[i].drawUnhealthy(g);
+        //plants[i].drawUnhealthyS3(g);
       }
       if (Home.totalScore >= 0 && Home.totalScore <=7){
         plants[i].drawSproutS3(g);
@@ -153,13 +157,14 @@ public class Garden extends Home implements ActionListener{
       }
       if(Home.totalScore > 14 && Home.totalScore <= 21)
       if (scores > 5){
-        plants[i].drawFlowerS3(g);
+        plants[i].drawFlowerS3S3(g);
       }
       if(Home.totalScore > 21 && Home.totalScore <= 29){
-        plants[i].drawFlowerS4(g);
+        plants[i].drawFlowerS4S3(g);
       }
-      if(Home.totalScore >= 30){
+      if(Home.totalScore > 29){
         plants[i].drawHealthy(g);
+        //plants[i].drawHealthyS3(g);
       }
     }
   }

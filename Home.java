@@ -165,7 +165,6 @@ class Home extends Main{
   public int checkScore(){
     score = 0;
     for(int i = 0; i < list.length-1; i++){
-      System.out.println("classification " + list[i].getClassification() + " " + list[i].isCompostable());
       if(list[i].getClassification() == list[i].isCompostable()){
         score++;
       }
@@ -182,7 +181,6 @@ class Home extends Main{
   public static void getList(Item[] items){
     for (int i = 0; i < list.length; i++){
       list[i] = items[i];
-      System.out.println("Home " + list[i].toString());
     }
   }
   public void setGardenButtonStatus(boolean tf){
