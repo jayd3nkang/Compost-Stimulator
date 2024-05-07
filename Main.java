@@ -12,10 +12,8 @@ class Main extends JPanel {
   static JFrame garden = new JFrame();
   static Home ex;
   static boolean seeGarden;
-  //static JButton button;
   public static void main(String[] args){
     seeGarden = false;
-
     homeSetUp();
     while (!Home.cycleEnd){
       System.out.print("");
@@ -24,13 +22,12 @@ class Main extends JPanel {
 
     }
 
-    // public static void popupEnd(boolean popEnd){
-    //   pop.setVisible(!popEnd);
-    // }
+    //changes the visibility of garden depnding what stage the game is at
     public static void seeG(boolean seeGarden){
       garden.setVisible(seeGarden);
     }
 
+    //code that sets up the home screen
     public static void homeSetUp(){
       ex = new Home(pop);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,6 +35,8 @@ class Main extends JPanel {
       frame.pack();
       frame.setVisible(true);
     }
+
+    //code that sets up the pop up screen and buttons used in the pop up screen
     public static void popUpScreenSetUp(){
       JButton compostButton = new JButton();
       JButton trashButton = new JButton();
@@ -58,7 +57,6 @@ class Main extends JPanel {
       trashButton.setBackground(new Color(241,246,220));
       pop.add(compostButton);
       pop.add(trashButton);
-      //button.addActionListener(popup);
   
       pop.pack();
   

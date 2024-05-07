@@ -15,6 +15,7 @@ public class FunFact {
   int messageInt;
 
   public FunFact() {
+    //reads facts from out facts.txt file and puts it into an arraylist
     funFactMessage = new ArrayList<String>();
     try{
       File myObj = new File("facts.txt");
@@ -25,6 +26,7 @@ public class FunFact {
         counter++;
       }
 
+      //randomly chooses an fact and that is the starting fact 
       Random rand = new Random();
       messageInt = rand.nextInt(counter);
 
@@ -38,10 +40,12 @@ public class FunFact {
     
   }
 
+  //returns the fact it is currently storing 
   public String getFact(){
     return this.toReturn;
   }
 
+  //changes the fact statement
   public void newFact(){
     Random rand = new Random();
     messageInt = rand.nextInt(counter);

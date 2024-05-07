@@ -9,13 +9,13 @@ import java.awt.Graphics;
 import java.awt.Image;
 
 class Home extends Main{
+  //sets up frame and 
   static JFrame popUpControl;
-  JButton button = new JButton();
 
-  // code related to cycle of day/night
   int rColor = 10;
   int gColor = 33;
   int bColor = 42;
+
   double xSun;
   double ySun;
   double xMoon;
@@ -25,6 +25,7 @@ class Home extends Main{
   static int dayCounter;
   static day index;
 
+  //sets up things related to cycle change, plants growing, and moving from garden to home and vice versa
   int count;
   public static int score;
   public static int totalScore;
@@ -33,6 +34,7 @@ class Home extends Main{
   boolean sunDown;
   public static boolean play;
 
+  //sets up stars for night cycle
   double[] starX = new double[200];
   double[] starY = new double[200];
   double[] starR = new double[200];
@@ -42,16 +44,18 @@ class Home extends Main{
   int plantNumber = 1;
   public static Item[] list = new Item[8];
   public flower[] plants = new flower[6];
-  //int score;
 
-  //using graphics to change the background sky color constantly 
-  //as of 4/19/24, 21:52, it can only go through one cycle of
-  //day and night.
   public class myRunnable implements Runnable{
     public void run(){
+      //initial setup for cycle and different screens
       sunDown = false;
       play = true;
 
+      //1. constantly checks if the conditions to change from home screen to 
+      //garden screen is met. If it is, then changes couple booleans to show 
+      //the correct screen on display 
+      //2. While checking the correct display, also checks the cycle and at appropriate times 
+      //changes the cycles
       while(true){
 
         if (gardenButtonStatus){
@@ -79,9 +83,8 @@ class Home extends Main{
       }
 
   }
-  //setting up the size, thread and variables so
-  //the cycle change can happen
-  //haven't implemented the moving of sun and car moving yet
+
+  //sets up flower's initial x and y positions
   public Home(){
     plants[0] = new flower(25, 305, 0);
     plants[1] = new flower(130, 365, 0);
@@ -90,6 +93,7 @@ class Home extends Main{
     plants[4] = new flower(680, 315, 0);
     plants[5] = new flower(855, 325, 0);
   }
+  //sets up crucial aspects of the game; size, starts thread, index and etc
   public Home(JFrame f){
     this();
     this.setPreferredSize(new Dimension(1000,1000));
@@ -104,9 +108,9 @@ class Home extends Main{
       starR[i] = Math.sqrt(Math.pow(starX[i], 2) + Math.pow(starY[i], 2));
     } 
   }
-//setting up the canvas 
 
   //drawing the components that need to be drawn
+  //draws the sun, moon, house, and stars
   public void paintComponent(Graphics g){
     //drawing the sky color
     g.setColor(new Color(rColor, gColor, bColor));
@@ -161,13 +165,10 @@ class Home extends Main{
         starY[i] = 1000 - (Math.sqrt(Math.pow(starR[i], 2) - Math.pow((starX[i] - 500), 2))); 
       }
 
-
       if (xSun <= 0) sunDown = false;
   }
 
   yMoon = (ySun * -1) + 1000;
-
-  
   if (xSun <= 500 && !sunDown && xSun % 2 == 0) {
     rColor += 2;
     gColor += 2;
@@ -179,9 +180,11 @@ class Home extends Main{
     bColor -= 4;
   }
 
-
   if (yMoon <= 500 && xSun <= 500) play = false;
 }
+
+  //checks the score for this round and total accumulation of rounds played
+  //used later to the draw the different states of flowers
   public int checkScore(){
     score = 0;
     for(int i = 0; i < list.length; i++){
@@ -203,15 +206,8 @@ class Home extends Main{
       list[i] = items[i];
     }
   }
-  public void setGardenButtonStatus(boolean tf){
-    this.gardenButtonStatus = tf;
-  }
-  public Item[] getList(){
-    return this.list;
-  }
-  
- 
 
+//creating a class to that shows the day player is on
 }
 class day{
   public int x;

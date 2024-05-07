@@ -14,17 +14,16 @@ public class Garden extends Home implements ActionListener{
     static JFrame frame;
     public int HEIGHT = 1000;
     public int WIDTH = 1000;
-    JButton nextCycle;
     int location;
     int buttonPressed = 0;
     int progression = 0;
     boolean gardenButtonPressed = true;
-   // Item[] copyList = new Item[8];
     int scores;
-
+    JButton nextCycle;
     JButton endSummary;
     boolean showSummary;
 
+    //sets up the endscreen, buttons for going to garden and nexy day
     public Garden(JButton input, JButton input2){
         this.setPreferredSize(new Dimension(1000,1000));
         Thread main = new Thread(new myRunnable());
@@ -39,23 +38,24 @@ public class Garden extends Home implements ActionListener{
         endSummary.setIcon(toGarden);
         showSummary = true;
     }
+
+    //constantly runs to draw needed graphics for garden
     public class myRunnable implements Runnable{
         public void run(){
             
             while(true){
-                // sorting();
                 repaint();
                 try{
               Thread.sleep(300);
-              //System.out.println(score);
             }
           catch(InterruptedException e){}
         }
           }
          
       }
+      //draws the needed components for garden
+      //draws the garden itself, the plants, and end of day summary 
     public void paintComponent(Graphics g){
-        // blue background...you guys did that out already!
 
         g.setColor(new Color(0,0,150));
         g.fillRect(0, 0, WIDTH, HEIGHT);
@@ -104,6 +104,8 @@ public class Garden extends Home implements ActionListener{
         scores = Home.score;
         System.out.println("Scores: " + scores + " Total Score " + Home.totalScore);
         
+      //depending on the progression, game draws different state of the flower
+      //gives an windy (swinging) effect but progression does not affect the flower growth
       if(progression == 0){
         drawStageOne(g);
       }
@@ -157,6 +159,8 @@ public class Garden extends Home implements ActionListener{
           g.drawString(scores + " / 8", 680, 760);
       }
     }
+    //is next day button has been pressed 
+    //if true, then does multiple operations to prepare for the next cycle
   @Override
   public void actionPerformed(ActionEvent e) {
 
@@ -178,51 +182,12 @@ public class Garden extends Home implements ActionListener{
       for (int i = 0; i < list.length; i++) {
         sortingPopup.list[i].x = 320;
         sortingPopup.list[i].y = 180;
-        // for (int r = 0; r < 40; r++){
-        //   if (r == 1) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 2) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 3) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 4) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 5) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 6) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 7) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 8) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 9) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 10) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 11) {list[i].x = 350; list[i].y = 200;}
-        //   if (r == 12) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 13) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 14) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 15) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 16) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 17) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 18) {list[i].x = 330; list[i].y = 200;}
-        //   if (r == 19) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 20) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 21) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 22) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 23) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 24) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 25) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 26) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 27) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 28) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 29) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 30) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 31) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 32) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 33) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 34) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 35) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 36) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 37) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 38) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 39) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 40) {list[i].x = 310; list[i].y = 180;}
-        // }
       }
 
     }
+
+    //checks if garden button has been pressed 
+    //if true, then closes end of day summary window and shows garden
     if(e.getSource() == endSummary){
       showSummary = false;
       endSummary.setVisible(false);
@@ -232,13 +197,12 @@ public class Garden extends Home implements ActionListener{
               sortingPopup.list[i] = sortingPopup.randomItem();
               }
               sortingPopup.getList(list);
-      // sortingPopup.generateNewList();
-      // sortingPopup.updateHomeList();
-      
     }
     buttonPressed++;
   }
 
+  //code below draws different stages of each flower stage depnding on how well the player composts.
+  // Each flower stage  has three different stages to give it a wind effect
   public void drawStageOne(Graphics g){
     for(int i = 0; i < plants.length; i++){
       if(Home.totalScore < 0){
@@ -257,12 +221,6 @@ public class Garden extends Home implements ActionListener{
         plants[3].y = 510;
         plants[4].y = 535;
         plants[5].y = 545;
-        // plants[0].x = 535;
-        // plants[1].x = 575;
-        // plants[2].x = 545;
-        // plants[3].x = 530;
-        // // plants[4].x = 535; this one is fine
-        // plants[5].x = 545;
         plants[i].drawSprout(g);
       }
       if(Home.totalScore > 8 && Home.totalScore <= 16){

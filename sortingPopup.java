@@ -11,32 +11,30 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class sortingPopup extends Home implements ActionListener{
-    Boolean sorted = false;
-    // list of items to be sorted every cycle
     public static Item[] list;
 
     JButton compostButton;
     JButton trashButton;
 
     int counter;
-    public static Boolean popEnd = false;
-
     int location;
     int buttonPressed = 0;
+
+    public static Boolean popEnd = false;
+    Boolean sorted = false;
+
     FunFact factClass;
     FactToScreen fact;
 
+  //sets up the buttons and list of facts used in pop up screen. Then gets 8 random items 
+  //to start the game
   public sortingPopup(JButton input, JButton input2){
     compostButton = input;
     trashButton = input2;
     counter = 0;
-
     factClass = new FunFact();
-
-
     ImageIcon compostIcon = new ImageIcon("compostButton.png");
     ImageIcon trashIcon = new ImageIcon("otherButton.png");
-
     compostButton.addActionListener(this);
     compostButton.setIcon(compostIcon);
     trashButton.addActionListener(this);
@@ -54,6 +52,9 @@ public class sortingPopup extends Home implements ActionListener{
     main.start();
   }
 
+  //constantly running to check if the player has sorted all the items 
+  //presnted in one day. If true, code changes to make sure that the next stage, the garden, 
+  //is shown. Additionally, resets couple of values to ensure that the game can run infinitely 
   public class myRunnable implements Runnable{
     public void run(){
         // every cycle, 8 items will need to be sorted
@@ -78,7 +79,7 @@ public class sortingPopup extends Home implements ActionListener{
      
   }
 
-
+  //randomly chooses items every time randomItem is called
   public static Item randomItem(){
     int r = (int) (Math.random() * 40) + 1;
     // r = 30;
@@ -126,6 +127,7 @@ public class sortingPopup extends Home implements ActionListener{
     return i;
   }
 
+  //draws the necessary components of pop up screen  
   public void paintComponent(Graphics g){
     g.setColor(new Color(241,246,220));
     g.fillRect(0, 0, 800, 800);
@@ -138,9 +140,11 @@ public class sortingPopup extends Home implements ActionListener{
     fact.paint(g);
   }
 
+
+  //checking to see which button is pressed and changing the items classification 
+  //depending on the button pressed
   @Override
   public void actionPerformed(ActionEvent e) {
-    // TODO Auto-generated method stub
     if(e.getSource() == compostButton){
       list[counter].setClassification(1);
       factClass.newFact();
@@ -166,13 +170,7 @@ public class sortingPopup extends Home implements ActionListener{
     
    }
 
-   public static void updateHomeList(){
-    for(int i = 0; i < list.length; i++){
-      Home.list[i] = list[i];
-    }
-   }
-
-
+   //creates the class to display facts onto the pop up screen
    class FactToScreen{
     public int x;
     public int y;
