@@ -161,7 +161,6 @@ public class sortingPopup extends Home implements ActionListener{
     }
     for(int i = 0; i < toReturn.length; i++){
       Home.list[i] = toReturn[i];
-      System.out.println(list[i].toString());
     }
     
    }

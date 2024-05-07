@@ -102,7 +102,6 @@ public class Garden extends Home implements ActionListener{
         }
         
         scores = Home.score;
-        System.out.println("Scores: " + scores + " Total Score " + Home.totalScore);
         
       //depending on the progression, game draws different state of the flower
       //gives an windy (swinging) effect but progression does not affect the flower growth
