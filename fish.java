@@ -25,6 +25,15 @@ public class fish extends Item implements Goods{
         g.drawImage(pic, x, y, this);
         //System.out.println("hello");
     }
+    public void drawSmall(Graphics g){
+        ImageIcon object = new ImageIcon("fish.png");
+        Image pic = object.getImage().getScaledInstance(99, 99, Image.SCALE_SMOOTH);
+        object = new ImageIcon(pic, object.getDescription());
+        // BufferedImage resized = new BufferedImage(50, 50, BufferedImage.TYPE_INT_RGB);
+        // Graphics2D graphics2d = resized.createGraphics();
+        // graphics2d.drawImage(pic, x, y, 50, 50, this);
+        g.drawImage(object.getImage(), x, y, this);
+    }
     public String toString(){
         return "Fish";
     }
