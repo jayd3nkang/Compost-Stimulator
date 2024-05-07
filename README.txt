@@ -9,4 +9,5 @@ After all items have been organized, they will be shown an “End of Day Summary
 Then they will be directed to the garden window that shows a certain stage of a flower (dead, sprout, flowering, and fully blossomed).
 Then player can click “Next Day” button to repeat this cycle.
 To run the code, input either “javac Main.java” or “java *.java” then “java Main” command lines
+SOUNDS ON!!! We have audio!!!
 Have fun!
