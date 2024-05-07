@@ -250,7 +250,7 @@ public class Garden extends Home implements ActionListener{
         // plants[5].y = 445;
         plants[i].drawUnhealthyS2(g);
       }
-      if (Home.totalScore >= 0 && Home.totalScore <=7){
+      if (Home.totalScore >= 0 && Home.totalScore <=8){
         // plants[0].y = 515;
         // plants[1].y = 575;
         // plants[2].y = 525;
@@ -259,17 +259,17 @@ public class Garden extends Home implements ActionListener{
         // plants[5].y = 545;
         plants[i].drawSproutS2(g);
       }
-      if(Home.totalScore > 7 && Home.totalScore <= 14){
+      if(Home.totalScore > 8 && Home.totalScore <= 16){
         plants[i].drawFlowerS2S2(g);
       }
-      if(Home.totalScore > 14 && Home.totalScore <= 21)
+      if(Home.totalScore > 16 && Home.totalScore <= 24)
       if (scores > 5){
         plants[i].drawFlowerS3S2(g);
       }
-      if(Home.totalScore > 21 && Home.totalScore <= 29){
+      if(Home.totalScore > 24 && Home.totalScore <= 32){
         plants[i].drawFlowerS4S2(g);
       }
-      if(Home.totalScore > 29){
+      if(Home.totalScore > 32){
         plants[i].drawHealthyS2(g);
       }
     }
@@ -286,7 +286,7 @@ public class Garden extends Home implements ActionListener{
         // plants[5].y = 445;
         plants[i].drawUnhealthyS3(g);
       }
-      if (Home.totalScore >= 0 && Home.totalScore <=7){
+      if (Home.totalScore >= 0 && Home.totalScore <=8){
         // plants[0].y = 515;
         // plants[1].y = 575;
         // plants[2].y = 525;
@@ -295,17 +295,17 @@ public class Garden extends Home implements ActionListener{
         // plants[5].y = 545;
         plants[i].drawSproutS3(g);
       }
-      if(Home.totalScore > 7 && Home.totalScore <= 14){
+      if(Home.totalScore > 8 && Home.totalScore <= 16){
         plants[i].drawFlowerS2S3(g);
       }
-      if(Home.totalScore > 14 && Home.totalScore <= 21)
+      if(Home.totalScore > 16 && Home.totalScore <= 24)
       if (scores > 5){
         plants[i].drawFlowerS3S3(g);
       }
-      if(Home.totalScore > 21 && Home.totalScore <= 29){
+      if(Home.totalScore > 24 && Home.totalScore <= 32){
         plants[i].drawFlowerS4S3(g);
       }
-      if(Home.totalScore > 29){
+      if(Home.totalScore > 32){
         plants[i].drawHealthyS3(g);
       }
     }

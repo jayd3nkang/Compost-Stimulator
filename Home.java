@@ -199,21 +199,21 @@ class Home extends Main implements ActionListener{
       }
 
 
-      if (xSun <= 0) sunDown = false;
+      if (xSun <= -100) sunDown = false;
   }
 
   yMoon = (ySun * -1) + 1000;
 
   
   if (xSun <= 500 && !sunDown && xSun % 2 == 0) {
-    rColor += 2;
-    gColor += 2;
-    bColor += 4;
+    rColor += 1;
+    gColor += 1;
+    bColor += 2;
   }
   if (xSun > 500 && !sunDown && xSun % 2 == 0) {
-    rColor -= 2;
-    gColor -= 2;
-    bColor -= 4;
+    rColor -= 1;
+    gColor -= 1;
+    bColor -= 2;
   }
 
 

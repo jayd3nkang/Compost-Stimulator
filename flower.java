@@ -42,17 +42,17 @@ public class flower extends Main{
     public void drawFlowerS2(Graphics g){
         ImageIcon plant = new ImageIcon("flower2(1).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+170, this);
+        g.drawImage(flower, x, y-50, this);
     }
     public void drawFlowerS2S2(Graphics g){
         ImageIcon plant = new ImageIcon("flower2(2).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+170, this);
+        g.drawImage(flower, x, y-50, this);
     }
     public void drawFlowerS2S3(Graphics g){
         ImageIcon plant = new ImageIcon("flower2(3).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+170, this);
+        g.drawImage(flower, x, y-50, this);
     }
     
 
@@ -61,17 +61,17 @@ public class flower extends Main{
     public void drawFlowerS3(Graphics g){
         ImageIcon plant = new ImageIcon("flower3(1).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+130,this);
+        g.drawImage(flower, x, y-100,this);
     }
     public void drawFlowerS3S2(Graphics g){
         ImageIcon plant = new ImageIcon("flower3(2).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+130,this);
+        g.drawImage(flower, x, y-100, this);
     }
     public void drawFlowerS3S3(Graphics g){
         ImageIcon plant = new ImageIcon("flower3(3).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+130,this);
+        g.drawImage(flower, x, y-100,this);
     }
 
 
@@ -79,34 +79,34 @@ public class flower extends Main{
     public void drawFlowerS4(Graphics g){
         ImageIcon plant = new ImageIcon("flower4(1).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+30, this);
+        g.drawImage(flower, x, y-110, this);
     }
     public void drawFlowerS4S2(Graphics g){
         ImageIcon plant = new ImageIcon("flower4(2).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+30, this);
+        g.drawImage(flower, x, y-110, this);
     }
     public void drawFlowerS4S3(Graphics g){
         ImageIcon plant = new ImageIcon("flower4(3).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+30, this);
+        g.drawImage(flower, x, y-110, this);
     }
 
      //creating methods to draw the fully blossomed stages 
     public void drawHealthy(Graphics g){
         ImageIcon plant = new ImageIcon("flower5(1).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+10, this);
+        g.drawImage(flower, x, y-200, this);
     }
     public void drawHealthyS2(Graphics g){
         ImageIcon plant = new ImageIcon("flower5(2).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+10, this);
+        g.drawImage(flower, x, y-200, this);
     }
     public void drawHealthyS3(Graphics g){
         ImageIcon plant = new ImageIcon("flower5(3).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+10, this);
+        g.drawImage(flower, x, y-200, this);
     }
 
     //creating methods to draw dead flower stages
