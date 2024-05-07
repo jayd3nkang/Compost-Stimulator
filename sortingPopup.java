@@ -68,7 +68,6 @@ public class sortingPopup extends Home implements ActionListener{
               garden.setVisible(true);
               Main.frame.setVisible(false);
               Home.score = checkScore();
-              factClass.newFact();
             }
             try{
           Thread.sleep(10);
@@ -135,7 +134,7 @@ public class sortingPopup extends Home implements ActionListener{
     g.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
     if (counter <= 7) g.drawString(list[counter].toString(), 340,65);
 
-    fact = new FactToScreen(70, 420, factClass.getFact());
+    fact = new FactToScreen(40, 420, factClass.getFact());
     fact.paint(g);
   }
 
@@ -144,12 +143,12 @@ public class sortingPopup extends Home implements ActionListener{
     // TODO Auto-generated method stub
     if(e.getSource() == compostButton){
       list[counter].setClassification(1);
-      //System.out.println(list[counter].toString() + list[counter].getClassification());
+      factClass.newFact();
       counter++;
     }
     if(e.getSource() == trashButton){
       list[counter].setClassification(0);
-     // System.out.println(list[counter].toString() + list[counter].getClassification());
+      factClass.newFact();
       counter++;
     }
 
