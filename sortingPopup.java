@@ -12,8 +12,10 @@ import java.awt.event.ActionListener;
 
 public class sortingPopup extends Home implements ActionListener{
     Boolean sorted = false;
+    FunFact facts;
     // list of items to be sorted every cycle
     public static Item[] list;
+    wordsToDraw factMess;
 
     JButton compostButton;
     JButton trashButton;
@@ -28,8 +30,7 @@ public class sortingPopup extends Home implements ActionListener{
   public sortingPopup(JButton input, JButton input2){
     compostButton = input;
     trashButton = input2;
-
-
+    facts = new FunFact();
 
     ImageIcon compostIcon = new ImageIcon("compostButton.png");
     ImageIcon trashIcon = new ImageIcon("otherButton.png");
@@ -58,6 +59,7 @@ public class sortingPopup extends Home implements ActionListener{
         while(true){
             // sorting();
             repaint();
+            System.out.println(facts.getMessage());
             if (counter >= 7) {
               counter = 0;
               popEnd = true;
@@ -67,6 +69,7 @@ public class sortingPopup extends Home implements ActionListener{
               Home.score = checkScore();
               generateNewList();
               updateHomeList();
+              facts.newMessage();
         }
             try{
           Thread.sleep(10);
@@ -132,6 +135,9 @@ public class sortingPopup extends Home implements ActionListener{
     g.setColor(new Color(102,66,52));
     g.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
     g.drawString(list[counter].toString(), 340,65);
+
+    factMess = new wordsToDraw(120,420, facts.getMessage());
+    factMess.paint(g);
   }
 
   @Override
@@ -157,7 +163,7 @@ public class sortingPopup extends Home implements ActionListener{
     }
     for(int i = 0; i < toReturn.length; i++){
       this.list[i] = toReturn[i];
-      System.out.println(list[i].toString());
+      //System.out.println(list[i].toString());
     }
     
    }
@@ -167,5 +173,29 @@ public class sortingPopup extends Home implements ActionListener{
       Home.list[i] = list[i];
     }
    }
+
+   class wordsToDraw{
+    public int x;
+    public int y;
+    public int i;
+    public String a;
+  
+    public wordsToDraw(int pX, int pY, String a){
+        this.x = pX;
+        this.y = pY;
+        this.a = a;
+    }
+    public void paint(Graphics g){
+        g.setColor(new Color(193, 230, 203));
+        g.fillRect(0,390,1000,50);
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
+        //g.drawString("FUN FACT:", 0,420);
+        //this.a += this.i;
+        g.drawString(this.a, this.x, this.y);
+    }
+  
+    
+  }
 
 }
