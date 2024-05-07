@@ -135,7 +135,7 @@ public class sortingPopup extends Home implements ActionListener{
     g.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
     if (counter <= 7) g.drawString(list[counter].toString(), 340,65);
 
-    fact = new FactToScreen(85, 420, factClass.getFact());
+    fact = new FactToScreen(70, 420, factClass.getFact());
     fact.paint(g);
   }
 
@@ -191,7 +191,7 @@ public class sortingPopup extends Home implements ActionListener{
 
 
         g.setColor(Color.BLACK);
-        g.setFont(new Font("Comic Sans MS", Font.PLAIN, 25));
+        g.setFont(new Font("Comic Sans MS", Font.PLAIN, 22));
         g.drawString(this.a, this.x, this.y);
     }
   }
