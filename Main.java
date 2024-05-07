@@ -100,7 +100,6 @@ class Main extends JPanel {
       trashButton.setBackground(new Color(241,246,220));
       pop.add(compostButton);
       pop.add(trashButton);
-      //button.addActionListener(popup);
   
       pop.pack();
   

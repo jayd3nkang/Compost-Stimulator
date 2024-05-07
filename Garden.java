@@ -1,4 +1,3 @@
-import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -7,10 +6,9 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Garden extends Home implements ActionListener{
+public class Garden extends Home{
     static JFrame frame;
     public int HEIGHT = 1000;
     public int WIDTH = 1000;
