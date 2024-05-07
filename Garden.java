@@ -108,7 +108,7 @@ public class Garden extends Home implements ActionListener{
         list[7].y = 530;
         for (int i = 0; i < list.length; i++){
           list[i].drawSmall(g);
-          if (list[i].l == list[i].p) {
+          if (list[i].getClassification() == list[i].isCompostable()) {
             g.drawImage(right, list[i].x + 150, list[i].y + 24, this);
           }
           else {
@@ -190,6 +190,8 @@ public class Garden extends Home implements ActionListener{
       showSummary = false;
       endSummary.setVisible(false);
       nextCycle.setVisible(true);
+      sortingPopup.generateNewList();
+      sortingPopup.updateHomeList();
       
     }
     buttonPressed++;

@@ -32,10 +32,10 @@ class Home extends Main{
   public static boolean gardenButtonStatus = true;
   boolean sunDown;
   public static boolean play;
-  // double starSize[];
-  // double starX[];
-  // double starY[];
-  // double starR[];
+
+  double[] starX = new double[200];
+  double[] starY = new double[200];
+  double[] starR = new double[200];
 
 
   // code related to keeping the garden
@@ -98,6 +98,11 @@ class Home extends Main{
     dayCounter = 1;
     index = new day(750, 100, dayCounter);
     popUpControl = f;  
+    for (int i = 0; i < starX.length; i++){
+      starX[i] = Math.random() * 1600;
+      starY[i] = Math.random() * 1600;
+      starR[i] = Math.sqrt(Math.pow(starX[i], 2) + Math.pow(starY[i], 2));
+    } 
   }
 //setting up the canvas 
 
@@ -116,6 +121,10 @@ class Home extends Main{
     Image iconMoon = moonPic.getImage();
 
 
+    g.setColor(Color.WHITE);
+    for (int i = 0; i < starX.length; i++){
+      g.fillOval((int)starX[i],(int) (starY[i]), 5, 5);
+    }
     g.drawImage(iconHouse,0,0,this);
     g.drawImage(iconSun, (int) (xSun - 100), (int)(ySun - 101) + 1000,this);
     g.drawImage(iconMoon, (int) (xMoon + 933),(int) (yMoon - 77.5) ,this);
@@ -129,6 +138,12 @@ class Home extends Main{
     if (!sunDown) {
       xSun += 5;
       xMoon -= 5;
+      for (int i = 0; i < starX.length; i++){
+        // starVX[i] = 1000 - starY[i];
+        // starVY[i] = starX[i] - 500;
+        starX[i] -= 5;
+        starY[i] = 1000 + (Math.sqrt(Math.pow(starR[i], 2) - Math.pow((starX[i] - 500), 2))); 
+      }
     }
     ySun = -1 * (Math.sqrt(640000 - Math.pow((xSun - 500), 2)));
 
@@ -139,7 +154,12 @@ class Home extends Main{
       xMoon += 5;
    
       ySun = (Math.sqrt(640000 - Math.pow((xSun - 500), 2)));
-
+      for (int i = 0; i < starX.length; i++){
+        // starVX[i] = 1000 - starY[i];
+        // starVY[i] = starX[i] - 500;
+        starX[i] += 5;
+        starY[i] = 1000 - (Math.sqrt(Math.pow(starR[i], 2) - Math.pow((starX[i] - 500), 2))); 
+      }
 
 
       if (xSun <= 0) sunDown = false;

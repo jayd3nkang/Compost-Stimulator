@@ -65,8 +65,8 @@ public class sortingPopup extends Home implements ActionListener{
               garden.setVisible(true);
               Main.frame.setVisible(false);
               Home.score = checkScore();
-              generateNewList();
-              updateHomeList();
+              // generateNewList();
+              // updateHomeList();
         }
             try{
           Thread.sleep(10);
@@ -78,7 +78,7 @@ public class sortingPopup extends Home implements ActionListener{
   }
 
 
-  public Item randomItem(){
+  public static Item randomItem(){
     int r = (int) (Math.random() * 40) + 1;
     // r = 30;
     Item i = new Item();
@@ -150,19 +150,19 @@ public class sortingPopup extends Home implements ActionListener{
 
   }
   //creates a new set of items for the user(s) to sort through
-  public void generateNewList(){
+  public static void generateNewList(){
     Item[] toReturn = new Item[8];
     for(int i = 0; i < toReturn.length; i++){
       toReturn[i] = randomItem();
     }
     for(int i = 0; i < toReturn.length; i++){
-      this.list[i] = toReturn[i];
+      Home.list[i] = toReturn[i];
       System.out.println(list[i].toString());
     }
     
    }
 
-   public void updateHomeList(){
+   public static void updateHomeList(){
     for(int i = 0; i < list.length; i++){
       Home.list[i] = list[i];
     }
