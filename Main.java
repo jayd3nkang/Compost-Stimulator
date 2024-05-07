@@ -16,11 +16,13 @@ class Main extends JPanel {
   static JButton startButton = new JButton();
   //static JButton button;
   public static void main(String[] args){
+    
     seeGarden = false;
     startButton.setBorderPainted(false);
     startButton.setOpaque(false);
     startButton.setFocusable(false);
     startButton.setIcon(new ImageIcon("startButton.png"));
+
     homeSetUp();
     while (!Home.cycleEnd){
       System.out.print("");
@@ -40,9 +42,10 @@ class Main extends JPanel {
       ex = new Home(pop, startButton);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setContentPane(ex);
+      frame.setLayout(null);
       frame.pack();
       frame.setVisible(true);
-      startButton.setBounds(450,700,200,100);
+      startButton.setBounds(425,500,200,100);
       frame.add(startButton);
     }
     public static void popUpScreenSetUp(){

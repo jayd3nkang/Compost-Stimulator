@@ -60,6 +60,7 @@ class Home extends Main implements ActionListener{
       mainMenu = false;
 
       while(true){
+        
 
         if (gardenButtonStatus && loadingTimer > 500 && !mainMenu){
           cycle();
