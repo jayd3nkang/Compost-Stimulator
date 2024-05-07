@@ -15,12 +15,15 @@ public class sortingPopup extends Home implements ActionListener{
     // list of items to be sorted every cycle
     public static Item[] list;
 
+    // buttons for user input
     JButton compostButton;
     JButton trashButton;
 
+    // counter that keeps track of how many items have been sorted in one cycle
     int counter;
     public static Boolean popEnd = false;
 
+    // code related to checking the score of the player and displaying fun facts
     int location;
     int buttonPressed = 0;
     FunFact factClass;

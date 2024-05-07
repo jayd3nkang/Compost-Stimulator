@@ -34,6 +34,8 @@ class MusicPlayer {
 }
 
 class Main extends JPanel {
+
+  // initiates all of the JFrames that show up for different parts of the game
   static JFrame frame = new JFrame();
   static JFrame pop = new JFrame();
   static JFrame garden = new JFrame();

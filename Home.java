@@ -15,6 +15,7 @@ class Home extends Main implements ActionListener{
   JButton button = new JButton();
 
   // code related to cycle of day/night
+  // determines the movement of the sun and moon, as well as the color of the sky
   int rColor = 10;
   int gColor = 33;
   int bColor = 42;
@@ -22,12 +23,11 @@ class Home extends Main implements ActionListener{
   double ySun;
   double xMoon;
   double yMoon;
-
-
   static int dayCounter;
   static day index;
 
-  int count;
+  // fields associated with keeping track of the user's score each day, their total score which is a sum of every day that has passed,
+  // and the transition between the different parts of the game
   public static int score;
   public static int totalScore;
   public static Boolean cycleEnd = false;
@@ -46,12 +46,10 @@ class Home extends Main implements ActionListener{
   public static flower[] plants = new flower[6];
   //int score;
 
+  // the timer for the loading screen and the boolean that determines if the player is past the main menu
   int loadingTimer;
   boolean mainMenu;
 
-  //using graphics to change the background sky color constantly 
-  //as of 4/19/24, 21:52, it can only go through one cycle of
-  //day and night.
   public class myRunnable implements Runnable{
     public void run(){
       sunDown = false;
@@ -77,7 +75,6 @@ class Home extends Main implements ActionListener{
             //score = 0;
           }
         }
-       if (loadingTimer > 500 && !mainMenu) count++;
         loadingTimer++;
         repaint();
         try{
