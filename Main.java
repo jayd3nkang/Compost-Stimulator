@@ -1,10 +1,36 @@
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.*;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.*;
+import java.io.*;
+
+
+// this code references https://www.muradnabizade.com/backgroundmusicjava
+class MusicPlayer {
+  void playMusic(String musicLoc){
+    try {
+      File musicPath = new File(musicLoc);
+      if(musicPath.exists()){ 
+      AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+      Clip clip = AudioSystem.getClip();
+      clip.open(audioInput);
+      clip.start();
+     }
+     else{
+      System.out.println("Couldn't find Music file");
+      }
+    }
+    catch (Exception ex){
+      ex.printStackTrace();
+    }
+    }
+}
+
 
 class Main extends JPanel {
   static JFrame frame = new JFrame();
@@ -13,8 +39,13 @@ class Main extends JPanel {
   static Home ex;
   static boolean seeGarden;
   //static JButton button;
-  public static void main(String[] args){
+  public static void main(String[] args) {
     seeGarden = false;
+
+    String filePath =
+    "childhood-afternoons-lloom-main-version-25583-03-11.wav";
+    MusicPlayer play = new MusicPlayer();
+    play.playMusic(filePath);
 
     homeSetUp();
     while (!Home.cycleEnd){
@@ -38,6 +69,7 @@ class Main extends JPanel {
       frame.pack();
       frame.setVisible(true);
     }
+
     public static void popUpScreenSetUp(){
       JButton compostButton = new JButton();
       JButton trashButton = new JButton();

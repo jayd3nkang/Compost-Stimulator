@@ -53,6 +53,7 @@ class Home extends Main{
       play = true;
 
       while(true){
+        
 
         if (gardenButtonStatus){
           cycle();
