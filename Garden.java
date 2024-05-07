@@ -71,36 +71,36 @@ public class Garden extends Home implements ActionListener{
           ImageIcon ex = new ImageIcon("wrong.png");
           Image wrong = ex.getImage();
           g.drawImage(eodSum, 200, 25, this);
-          list[0].x = 250;
-          list[1].x = 520;
-          list[2].x = 250;
-          list[3].x = 520;
-          list[4].x = 250;
-          list[5].x = 520;
-          list[6].x = 250;
-          list[7].x = 520;
-          list[0].y = 140;
-          list[1].y = 140;
-          list[2].y = 270;
-          list[3].y = 270;
-          list[4].y = 400;
-          list[5].y = 400;
-          list[6].y = 530;
-          list[7].y = 530;
+          sortingPopup.list[0].x = 250;
+          sortingPopup.list[1].x = 520;
+          sortingPopup.list[2].x = 250;
+          sortingPopup.list[3].x = 520;
+          sortingPopup.list[4].x = 250;
+          sortingPopup.list[5].x = 520;
+          sortingPopup.list[6].x = 250;
+          sortingPopup.list[7].x = 520;
+          sortingPopup.list[0].y = 140;
+          sortingPopup.list[1].y = 140;
+          sortingPopup.list[2].y = 270;
+          sortingPopup.list[3].y = 270;
+          sortingPopup.list[4].y = 400;
+          sortingPopup.list[5].y = 400;
+          sortingPopup.list[6].y = 530;
+          sortingPopup.list[7].y = 530;
           for (int i = 0; i < list.length; i++){
             list[i].drawSmall(g);
-            if (list[i].getClassification() == list[i].isCompostable()) {
-              g.drawImage(right, list[i].x + 150, list[i].y + 24, this);
+            if (sortingPopup.list[i].getClassification() == sortingPopup.list[i].isCompostable()) {
+              g.drawImage(right, sortingPopup.list[i].x + 150, sortingPopup.list[i].y + 24, this);
             }
             else {
-              g.drawImage(wrong, list[i].x + 150, list[i].y + 24, this);
+              g.drawImage(wrong, sortingPopup.list[i].x + 150, sortingPopup.list[i].y + 24, this);
             }
           }
           g.setFont(new Font("Comic Sans MS",Font.PLAIN,40));
             g.setColor(Color.BLACK);
             g.drawString(scores + " / 8", 680, 760);
         }
-
+        
         scores = Home.score;
         System.out.println("Scores: " + scores + " Total Score " + Home.totalScore);
         
@@ -145,11 +145,11 @@ public class Garden extends Home implements ActionListener{
         sortingPopup.list[7].y = 530;
         for (int i = 0; i < list.length; i++){
           sortingPopup.list[i].drawSmall(g);
-          if (list[i].getClassification() == list[i].isCompostable()) {
-            g.drawImage(right, list[i].x + 150, list[i].y + 24, this);
+          if (sortingPopup.list[i].getClassification() == sortingPopup.list[i].isCompostable()) {
+            g.drawImage(right, sortingPopup.list[i].x + 150, sortingPopup.list[i].y + 24, this);
           }
           else {
-            g.drawImage(wrong, list[i].x + 150, list[i].y + 24, this);
+            g.drawImage(wrong, sortingPopup.list[i].x + 150, sortingPopup.list[i].y + 24, this);
           }
         }
         g.setFont(new Font("Comic Sans MS",Font.PLAIN,40));
@@ -162,7 +162,7 @@ public class Garden extends Home implements ActionListener{
 
     if(e.getSource() == nextCycle){
 
-      list[buttonPressed].changeLocation(1);
+      sortingPopup.list[buttonPressed].changeLocation(1);
       System.out.println("compost button clicked");
       seeGarden = false;
       Main.frame.setVisible(true);
@@ -242,9 +242,27 @@ public class Garden extends Home implements ActionListener{
   public void drawStageOne(Graphics g){
     for(int i = 0; i < plants.length; i++){
       if(Home.totalScore < 0){
+        plants[0].y = 415;
+        plants[1].y = 475;
+        plants[2].y = 425;
+        plants[3].y = 410;
+        plants[4].y = 435;
+        plants[5].y = 445;
         plants[i].drawUnhealthy(g);
       }
       if (Home.totalScore >= 0 && Home.totalScore <=7){
+        plants[0].y = 515;
+        plants[1].y = 575;
+        plants[2].y = 525;
+        plants[3].y = 510;
+        plants[4].y = 535;
+        plants[5].y = 545;
+        // plants[0].x = 535;
+        // plants[1].x = 575;
+        // plants[2].x = 545;
+        // plants[3].x = 530;
+        // // plants[4].x = 535; this one is fine
+        // plants[5].x = 545;
         plants[i].drawSprout(g);
       }
       if(Home.totalScore > 7 && Home.totalScore <= 14){
