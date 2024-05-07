@@ -26,17 +26,18 @@ public class Garden extends Home implements ActionListener{
     boolean showSummary;
 
     public Garden(JButton input, JButton input2){
-      this.setPreferredSize(new Dimension(1000,1000));
-      Thread main = new Thread(new myRunnable());
-      main.start();
-      nextCycle = input;
-      nextCycle.addActionListener(this);
-      ImageIcon compostIcon = new ImageIcon("nextDayButton.png");
-      nextCycle.setIcon(compostIcon);
-      endSummary = input2;
-      endSummary.addActionListener(this);
-      endSummary.setIcon(compostIcon);
-      showSummary = true;
+        this.setPreferredSize(new Dimension(1000,1000));
+        Thread main = new Thread(new myRunnable());
+        main.start();
+        nextCycle = input;
+        nextCycle.addActionListener(this);
+        ImageIcon compostIcon = new ImageIcon("nextDayButton.png");
+        ImageIcon toGarden = new ImageIcon("toGardenButton.png");
+        nextCycle.setIcon(compostIcon);
+        endSummary = input2;
+        endSummary.addActionListener(this);
+        endSummary.setIcon(toGarden);
+        showSummary = true;
     }
     public class myRunnable implements Runnable{
         public void run(){
@@ -55,6 +56,7 @@ public class Garden extends Home implements ActionListener{
       }
     public void paintComponent(Graphics g){
         // blue background...you guys did that out already!
+
         g.setColor(new Color(0,0,150));
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
@@ -63,7 +65,7 @@ public class Garden extends Home implements ActionListener{
         g.drawImage(garden, 0, 0, this);
 
         scores = Home.score;
-        //System.out.println("Scores: " + scores + " Total Score " + Home.totalScore);
+        System.out.println("Scores: " + scores + " Total Score " + Home.totalScore);
         
       if(progression == 0){
         drawStageOne(g);
@@ -81,7 +83,6 @@ public class Garden extends Home implements ActionListener{
         progression = 0;
       }
       if (showSummary) {
-        int showScore = 0;
         ImageIcon summary = new ImageIcon("summaryBackground.png");
         Image eodSum = summary.getImage();
         ImageIcon check = new ImageIcon("right.png");
@@ -105,12 +106,10 @@ public class Garden extends Home implements ActionListener{
         list[5].y = 400;
         list[6].y = 530;
         list[7].y = 530;
-
         for (int i = 0; i < list.length; i++){
           list[i].drawSmall(g);
-          if (list[i].l == list[i].p) {
+          if (list[i].getClassification() == list[i].isCompostable()) {
             g.drawImage(right, list[i].x + 150, list[i].y + 24, this);
-            showScore++;
           }
           else {
             g.drawImage(wrong, list[i].x + 150, list[i].y + 24, this);
@@ -118,7 +117,7 @@ public class Garden extends Home implements ActionListener{
         }
         g.setFont(new Font("Comic Sans MS",Font.PLAIN,40));
           g.setColor(Color.BLACK);
-          g.drawString(showScore + " / 8", 680, 760);
+          g.drawString(scores + " / 8", 680, 760);
       }
     }
   @Override
@@ -139,11 +138,51 @@ public class Garden extends Home implements ActionListener{
       showSummary = true;
       nextCycle.setVisible(false);
       endSummary.setVisible(true);
-      //factMessage.newMessage();
       for (int i = 0; i < list.length; i++) {
         list[i].x = 320;
         list[i].y = 180;
-     
+        // for (int r = 0; r < 40; r++){
+        //   if (r == 1) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 2) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 3) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 4) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 5) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 6) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 7) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 8) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 9) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 10) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 11) {list[i].x = 350; list[i].y = 200;}
+        //   if (r == 12) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 13) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 14) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 15) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 16) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 17) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 18) {list[i].x = 330; list[i].y = 200;}
+        //   if (r == 19) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 20) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 21) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 22) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 23) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 24) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 25) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 26) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 27) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 28) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 29) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 30) {list[i].x = 350; list[i].y = 180;}
+        //   if (r == 31) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 32) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 33) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 34) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 35) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 36) {list[i].x = 310; list[i].y = 180;}
+        //   if (r == 37) {list[i].x = 320; list[i].y = 180;}
+        //   if (r == 38) {list[i].x = 330; list[i].y = 180;}
+        //   if (r == 39) {list[i].x = 320; list[i].y = 200;}
+        //   if (r == 40) {list[i].x = 310; list[i].y = 180;}
+        // }
       }
 
     }
@@ -151,6 +190,8 @@ public class Garden extends Home implements ActionListener{
       showSummary = false;
       endSummary.setVisible(false);
       nextCycle.setVisible(true);
+      sortingPopup.generateNewList();
+      sortingPopup.updateHomeList();
       
     }
     buttonPressed++;
@@ -228,47 +269,5 @@ public class Garden extends Home implements ActionListener{
     }
   }
   
-     // for (int r = 0; r < 40; r++){
-        //   if (r == 1) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 2) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 3) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 4) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 5) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 6) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 7) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 8) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 9) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 10) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 11) {list[i].x = 350; list[i].y = 200;}
-        //   if (r == 12) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 13) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 14) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 15) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 16) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 17) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 18) {list[i].x = 330; list[i].y = 200;}
-        //   if (r == 19) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 20) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 21) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 22) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 23) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 24) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 25) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 26) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 27) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 28) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 29) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 30) {list[i].x = 350; list[i].y = 180;}
-        //   if (r == 31) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 32) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 33) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 34) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 35) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 36) {list[i].x = 310; list[i].y = 180;}
-        //   if (r == 37) {list[i].x = 320; list[i].y = 180;}
-        //   if (r == 38) {list[i].x = 330; list[i].y = 180;}
-        //   if (r == 39) {list[i].x = 320; list[i].y = 200;}
-        //   if (r == 40) {list[i].x = 310; list[i].y = 180;}
-        // }
 
 }
