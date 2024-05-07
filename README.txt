@@ -8,6 +8,8 @@ Player will interact with the game by clicking on “Compost” or “Other” b
 After all items have been organized, they will be shown an “End of Day Summary” that indicates which items player got wrong that day and their total score 
 Then they will be directed to the garden window that shows a certain stage of a flower (dead, sprout, flowering, and fully blossomed).
 Then player can click “Next Day” button to repeat this cycle.
-To run the code, input either “javac Main.java” or “java *.java” then “java Main” command lines
+There are FIVE stages of flower. If first five days are composted correctly, then on the fifth day player gets to see the fully blossomed flower!
 SOUNDS ON!!! We have audio!!!
 Have fun!
+
+To run the code, input either “javac Main.java” or “java *.java” then “java Main” command lines
