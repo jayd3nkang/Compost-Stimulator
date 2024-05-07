@@ -284,21 +284,21 @@ public class Garden extends Home implements ActionListener{
   public void drawStageTwo(Graphics g){
     for(int i = 0; i < plants.length; i++){
       if(Home.totalScore < 0){
-        plants[0].y = 415;
-        plants[1].y = 475;
-        plants[2].y = 425;
-        plants[3].y = 410;
-        plants[4].y = 435;
-        plants[5].y = 445;
+        // plants[0].y = 415;
+        // plants[1].y = 475;
+        // plants[2].y = 425;
+        // plants[3].y = 410;
+        // plants[4].y = 435;
+        // plants[5].y = 445;
         plants[i].drawUnhealthyS2(g);
       }
       if (Home.totalScore >= 0 && Home.totalScore <=7){
-        plants[0].y = 515;
-        plants[1].y = 575;
-        plants[2].y = 525;
-        plants[3].y = 510;
-        plants[4].y = 535;
-        plants[5].y = 545;
+        // plants[0].y = 515;
+        // plants[1].y = 575;
+        // plants[2].y = 525;
+        // plants[3].y = 510;
+        // plants[4].y = 535;
+        // plants[5].y = 545;
         plants[i].drawSproutS2(g);
       }
       if(Home.totalScore > 7 && Home.totalScore <= 14){
@@ -320,21 +320,21 @@ public class Garden extends Home implements ActionListener{
   public void drawStageThree(Graphics g){
     for(int i = 0; i < plants.length; i++){
       if(Home.totalScore < 0){
-        plants[0].y = 415;
-        plants[1].y = 475;
-        plants[2].y = 425;
-        plants[3].y = 410;
-        plants[4].y = 435;
-        plants[5].y = 445;
+        // plants[0].y = 415;
+        // plants[1].y = 475;
+        // plants[2].y = 425;
+        // plants[3].y = 410;
+        // plants[4].y = 435;
+        // plants[5].y = 445;
         plants[i].drawUnhealthyS3(g);
       }
       if (Home.totalScore >= 0 && Home.totalScore <=7){
-        plants[0].y = 515;
-        plants[1].y = 575;
-        plants[2].y = 525;
-        plants[3].y = 510;
-        plants[4].y = 535;
-        plants[5].y = 545;
+        // plants[0].y = 515;
+        // plants[1].y = 575;
+        // plants[2].y = 525;
+        // plants[3].y = 510;
+        // plants[4].y = 535;
+        // plants[5].y = 545;
         plants[i].drawSproutS3(g);
       }
       if(Home.totalScore > 7 && Home.totalScore <= 14){

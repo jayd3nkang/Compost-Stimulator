@@ -167,12 +167,6 @@ public class sortingPopup extends Home implements ActionListener{
     
    }
 
-   public static void updateHomeList(){
-    for(int i = 0; i < list.length; i++){
-      Home.list[i] = list[i];
-    }
-   }
-
 
    class FactToScreen{
     public int x;

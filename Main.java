@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,10 +13,14 @@ class Main extends JPanel {
   static JFrame garden = new JFrame();
   static Home ex;
   static boolean seeGarden;
+  static JButton startButton = new JButton();
   //static JButton button;
   public static void main(String[] args){
     seeGarden = false;
-
+    startButton.setBorderPainted(false);
+    startButton.setOpaque(false);
+    startButton.setFocusable(false);
+    startButton.setIcon(new ImageIcon("startButton.png"));
     homeSetUp();
     while (!Home.cycleEnd){
       System.out.print("");
@@ -32,11 +37,13 @@ class Main extends JPanel {
     }
 
     public static void homeSetUp(){
-      ex = new Home(pop);
+      ex = new Home(pop, startButton);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setContentPane(ex);
       frame.pack();
       frame.setVisible(true);
+      startButton.setBounds(450,700,200,100);
+      frame.add(startButton);
     }
     public static void popUpScreenSetUp(){
       JButton compostButton = new JButton();

@@ -7,8 +7,10 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-class Home extends Main{
+class Home extends Main implements ActionListener{
   static JFrame popUpControl;
   JButton button = new JButton();
 
@@ -44,6 +46,9 @@ class Home extends Main{
   public flower[] plants = new flower[6];
   //int score;
 
+  int loadingTimer;
+  boolean mainMenu;
+
   //using graphics to change the background sky color constantly 
   //as of 4/19/24, 21:52, it can only go through one cycle of
   //day and night.
@@ -51,10 +56,12 @@ class Home extends Main{
     public void run(){
       sunDown = false;
       play = true;
+      loadingTimer = 0;
+      mainMenu = false;
 
       while(true){
 
-        if (gardenButtonStatus){
+        if (gardenButtonStatus && loadingTimer > 500 && !mainMenu){
           cycle();
           if(xSun >= 525 && (int)ySun == 799){
             gardenButtonStatus = false;
@@ -62,14 +69,15 @@ class Home extends Main{
             frame.setVisible(false);
           }
         }
-        if(!gardenButtonStatus){
+        if(!gardenButtonStatus && loadingTimer > 500 && !mainMenu){
           cycleEnd = true;
           if(xSun >= 500 && (int)ySun == 799){
             xSun--;
             //score = 0;
           }
         }
-        count++;
+       if (loadingTimer > 500 && !mainMenu) count++;
+        loadingTimer++;
         repaint();
         try{
           Thread.sleep(10);
@@ -90,7 +98,7 @@ class Home extends Main{
     plants[4] = new flower(680, 315, 0);
     plants[5] = new flower(855, 325, 0);
   }
-  public Home(JFrame f){
+  public Home(JFrame f, JButton start){
     this();
     this.setPreferredSize(new Dimension(1000,1000));
     Thread main = new Thread(new myRunnable());
@@ -103,6 +111,17 @@ class Home extends Main{
       starY[i] = Math.random() * 1600;
       starR[i] = Math.sqrt(Math.pow(starX[i], 2) + Math.pow(starY[i], 2));
     } 
+    startButton.setVisible(mainMenu);
+    startButton.addActionListener(this);
+  }
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    // TODO Auto-generated method stub
+    if(e.getSource() == startButton){
+      mainMenu = false;
+      startButton.setVisible(false);
+    }
+
   }
 //setting up the canvas 
 
@@ -129,7 +148,24 @@ class Home extends Main{
     g.drawImage(iconSun, (int) (xSun - 100), (int)(ySun - 101) + 1000,this);
     g.drawImage(iconMoon, (int) (xMoon + 933),(int) (yMoon - 77.5) ,this);
     index.paint(g);
-
+    ImageIcon JEM = new ImageIcon("jemScreen.png");
+    Image loadingScreen = JEM.getImage();
+    ImageIcon menuIcon = new ImageIcon("startScreen.png");
+    Image startSreen = menuIcon.getImage();
+    if (loadingTimer < 500 && !mainMenu) {
+      g.drawImage(loadingScreen, 0, 0, this);
+      g.setColor(Color.WHITE);
+      if (loadingTimer > 200) g.fillOval(460, 700, 20, 20);
+      if (loadingTimer > 300) g.fillOval(490, 700, 20, 20);
+      if (loadingTimer > 400) g.fillOval(520, 700, 20, 20);
+      if (loadingTimer == 499) {
+        mainMenu = true;
+        startButton.setVisible(true);
+      }
+    }
+    if (mainMenu) {
+      g.drawImage(startSreen, 0, -100, this);
+    }
   }
 
 
