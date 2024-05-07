@@ -231,47 +231,5 @@ class day{
       this.a += this.i;
       g.drawString(this.a, this.x, this.y);
   }
-
-  
 }
 
-
-
-
-    // for (int i = 0; i < list.length; i++){
-    //   if (list[i].l == list[i].p) {
-    //     score++;
-    //     for (int j = 0; j < plants.length; j++){
-    //       plants[j].state = score;
-    //     }
-    //   }
-    // }
-
-    // plantNumber is an int denoting which plant is being drawn
-    // if (score >= 5) {
-    //   for (int i = 0; i < plants.length; i++){
-    //     plants[i].state = score;
-    //   }
-    // }
-    // else for (int i = 0; i < plants.length; i++){
-    //   plants[i].state--;
-    // }
-
-        // starX = new double[50];
-    // starY = new double[50];
-    // starR = new double[50];
-    // starSize = new double[50];
-
-    // for (int i = 0; i < starR.length; i++){
-    //   starX[i] = Math.random() * 1000;
-    //   starY[i] = (Math.random() * 1000) + 1000;
-    //   starR[i] = Math.random() * 250000 + 10000;
-    //   starSize[i] = Math.random() * 10;
-    // }
-
-    // plants[0] = new flower(15, 370, 0);
-    // plants[1] = new flower(100, 430, 0);
-    // plants[2] = new flower(270, 378, 0);
-    // plants[3] = new flower(470, 380, 0);
-    // plants[4] = new flower(670, 380, 0);
-    // plants[5] = new flower(830, 380, 0);
