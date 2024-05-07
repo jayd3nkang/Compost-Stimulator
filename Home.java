@@ -83,12 +83,12 @@ class Home extends Main{
   //the cycle change can happen
   //haven't implemented the moving of sun and car moving yet
   public Home(){
-    plants[0] = new flower(15, 305, 0);
-    plants[1] = new flower(120, 365, 0);
-    plants[2] = new flower(280, 325, 0);
-    plants[3] = new flower(470, 310, 0);
+    plants[0] = new flower(25, 305, 0);
+    plants[1] = new flower(130, 365, 0);
+    plants[2] = new flower(290, 325, 0);
+    plants[3] = new flower(480, 310, 0);
     plants[4] = new flower(680, 315, 0);
-    plants[5] = new flower(845, 325, 0);
+    plants[5] = new flower(855, 325, 0);
   }
   public Home(JFrame f){
     this();
@@ -184,8 +184,8 @@ class Home extends Main{
 }
   public int checkScore(){
     score = 0;
-    for(int i = 0; i < list.length-1; i++){
-      if(list[i].getClassification() == list[i].isCompostable()){
+    for(int i = 0; i < list.length; i++){
+      if(sortingPopup.list[i].getClassification() == sortingPopup.list[i].isCompostable()){
         score++;
       }
       else{

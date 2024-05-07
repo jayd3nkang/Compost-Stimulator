@@ -28,7 +28,7 @@ public class rose extends Item implements Goods{
 
     public void drawSmall(Graphics g){
         ImageIcon object = new ImageIcon("rose.png");
-        Image pic = object.getImage().getScaledInstance(99, 99, Image.SCALE_SMOOTH);
+        Image pic = object.getImage().getScaledInstance((int)(w/1.7), (int)(h/1.7), Image.SCALE_SMOOTH);
         object = new ImageIcon(pic, object.getDescription());
         // BufferedImage resized = new BufferedImage(50, 50, BufferedImage.TYPE_INT_RGB);
         // Graphics2D graphics2d = resized.createGraphics();
