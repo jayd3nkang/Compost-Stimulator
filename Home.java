@@ -43,7 +43,7 @@ class Home extends Main implements ActionListener{
   // code related to keeping the garden
   int plantNumber = 1;
   public static Item[] list = new Item[8];
-  public flower[] plants = new flower[6];
+  public static flower[] plants = new flower[6];
   //int score;
 
   int loadingTimer;

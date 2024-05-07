@@ -25,17 +25,17 @@ public class flower extends Main{
     public void drawSprout(Graphics g){
         ImageIcon plant = new ImageIcon("flower1(1).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+200, this);
+        g.drawImage(flower, x, y, this);
     }
     public void drawSproutS2(Graphics g){
         ImageIcon plant = new ImageIcon("flower1(2).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+200, this);
+        g.drawImage(flower, x, y, this);
     }
     public void drawSproutS3(Graphics g){
         ImageIcon plant = new ImageIcon("flower1(3).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+200, this);
+        g.drawImage(flower, x, y, this);
     }
 
     //creating methods to draw blossoming stages 
@@ -113,16 +113,16 @@ public class flower extends Main{
     public void drawUnhealthy(Graphics g){
         ImageIcon plant = new ImageIcon("deadFlower(3).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+70, this);
+        g.drawImage(flower, x, y, this);
     }
     public void drawUnhealthyS2(Graphics g){
         ImageIcon plant = new ImageIcon("deadFlower(2).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+70, this);
+        g.drawImage(flower, x, y, this);
     }
     public void drawUnhealthyS3(Graphics g){
         ImageIcon plant = new ImageIcon("deadFlower(1).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+70, this);
+        g.drawImage(flower, x, y, this);
     }
 }
