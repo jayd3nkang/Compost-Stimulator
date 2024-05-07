@@ -59,17 +59,17 @@ public class flower extends Main{
     public void drawFlowerS3(Graphics g){
         ImageIcon plant = new ImageIcon("flower3(1).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+150,this);
+        g.drawImage(flower, x, y+130,this);
     }
     public void drawFlowerS3S2(Graphics g){
         ImageIcon plant = new ImageIcon("flower3(2).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+150,this);
+        g.drawImage(flower, x, y+130,this);
     }
     public void drawFlowerS3S3(Graphics g){
         ImageIcon plant = new ImageIcon("flower3(3).png");
         Image flower = plant.getImage();
-        g.drawImage(flower, x, y+150,this);
+        g.drawImage(flower, x, y+130,this);
     }
 
 
@@ -109,16 +109,16 @@ public class flower extends Main{
     public void drawUnhealthy(Graphics g){
         ImageIcon plant = new ImageIcon("deadFlower(3).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+40, this);
+        g.drawImage(flower, x, y+70, this);
     }
     public void drawUnhealthyS2(Graphics g){
         ImageIcon plant = new ImageIcon("deadFlower(2).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+40, this);
+        g.drawImage(flower, x, y+70, this);
     }
     public void drawUnhealthyS3(Graphics g){
         ImageIcon plant = new ImageIcon("deadFlower(1).png");
         Image flower = plant.getImage();   
-        g.drawImage(flower, x, y+40, this);
+        g.drawImage(flower, x, y+70, this);
     }
 }
