@@ -23,12 +23,15 @@ public class sortingPopup extends Home implements ActionListener{
 
     int location;
     int buttonPressed = 0;
-    //double placeboC = 0.0;
+    FunFact factClass;
+    FactToScreen fact;
 
   public sortingPopup(JButton input, JButton input2){
     compostButton = input;
     trashButton = input2;
     counter = 0;
+
+    factClass = new FunFact();
 
 
     ImageIcon compostIcon = new ImageIcon("compostButton.png");
@@ -65,8 +68,7 @@ public class sortingPopup extends Home implements ActionListener{
               garden.setVisible(true);
               Main.frame.setVisible(false);
               Home.score = checkScore();
-              // generateNewList();
-              // updateHomeList();
+              factClass.newFact();
             }
             try{
           Thread.sleep(10);
@@ -132,6 +134,9 @@ public class sortingPopup extends Home implements ActionListener{
     g.setColor(new Color(102,66,52));
     g.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
     if (counter <= 7) g.drawString(list[counter].toString(), 340,65);
+
+    fact = new FactToScreen(70, 420, factClass.getFact());
+    fact.paint(g);
   }
 
   @Override
@@ -167,5 +172,28 @@ public class sortingPopup extends Home implements ActionListener{
       Home.list[i] = list[i];
     }
    }
+
+
+   class FactToScreen{
+    public int x;
+    public int y;
+    public int i;
+    public String a;
+  
+    public FactToScreen(int pX, int pY, String a){
+        this.x = pX;
+        this.y = pY;
+        this.a = a;
+    }
+    public void paint(Graphics g){
+        g.setColor(new Color(201, 224, 164));
+        g.fillRect(0,490,1000,50);
+
+
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Comic Sans MS", Font.PLAIN, 22));
+        g.drawString(this.a, this.x, this.y);
+    }
+  }
 
 }
