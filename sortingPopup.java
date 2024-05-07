@@ -18,7 +18,7 @@ public class sortingPopup extends Home implements ActionListener{
     JButton compostButton;
     JButton trashButton;
 
-    int counter = 0;
+    int counter;
     public static Boolean popEnd = false;
 
     int location;
@@ -28,7 +28,7 @@ public class sortingPopup extends Home implements ActionListener{
   public sortingPopup(JButton input, JButton input2){
     compostButton = input;
     trashButton = input2;
-
+    counter = 0;
 
 
     ImageIcon compostIcon = new ImageIcon("compostButton.png");
@@ -58,7 +58,7 @@ public class sortingPopup extends Home implements ActionListener{
         while(true){
             // sorting();
             repaint();
-            if (counter >= 7) {
+            if (counter > 7) {
               counter = 0;
               popEnd = true;
               pop.setVisible(false);
@@ -67,7 +67,7 @@ public class sortingPopup extends Home implements ActionListener{
               Home.score = checkScore();
               // generateNewList();
               // updateHomeList();
-        }
+            }
             try{
           Thread.sleep(10);
         }
@@ -128,10 +128,10 @@ public class sortingPopup extends Home implements ActionListener{
   public void paintComponent(Graphics g){
     g.setColor(new Color(241,246,220));
     g.fillRect(0, 0, 800, 800);
-    list[counter].draw(g);
+    if (counter <= 7) list[counter].draw(g);
     g.setColor(new Color(102,66,52));
     g.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
-    g.drawString(list[counter].toString(), 340,65);
+    if (counter <= 7) g.drawString(list[counter].toString(), 340,65);
   }
 
   @Override

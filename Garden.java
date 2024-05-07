@@ -63,6 +63,43 @@ public class Garden extends Home implements ActionListener{
         ImageIcon compost = new ImageIcon("compost.png");
         Image garden = compost.getImage();
         g.drawImage(garden, 0, 0, this);
+        if (showSummary) {
+          ImageIcon summary = new ImageIcon("summaryBackground.png");
+          Image eodSum = summary.getImage();
+          ImageIcon check = new ImageIcon("right.png");
+          Image right = check.getImage();
+          ImageIcon ex = new ImageIcon("wrong.png");
+          Image wrong = ex.getImage();
+          g.drawImage(eodSum, 200, 25, this);
+          list[0].x = 250;
+          list[1].x = 520;
+          list[2].x = 250;
+          list[3].x = 520;
+          list[4].x = 250;
+          list[5].x = 520;
+          list[6].x = 250;
+          list[7].x = 520;
+          list[0].y = 140;
+          list[1].y = 140;
+          list[2].y = 270;
+          list[3].y = 270;
+          list[4].y = 400;
+          list[5].y = 400;
+          list[6].y = 530;
+          list[7].y = 530;
+          for (int i = 0; i < list.length; i++){
+            list[i].drawSmall(g);
+            if (list[i].getClassification() == list[i].isCompostable()) {
+              g.drawImage(right, list[i].x + 150, list[i].y + 24, this);
+            }
+            else {
+              g.drawImage(wrong, list[i].x + 150, list[i].y + 24, this);
+            }
+          }
+          g.setFont(new Font("Comic Sans MS",Font.PLAIN,40));
+            g.setColor(Color.BLACK);
+            g.drawString(scores + " / 8", 680, 760);
+        }
 
         scores = Home.score;
         System.out.println("Scores: " + scores + " Total Score " + Home.totalScore);
@@ -90,24 +127,24 @@ public class Garden extends Home implements ActionListener{
         ImageIcon ex = new ImageIcon("wrong.png");
         Image wrong = ex.getImage();
         g.drawImage(eodSum, 200, 25, this);
-        list[0].x = 250;
-        list[1].x = 520;
-        list[2].x = 250;
-        list[3].x = 520;
-        list[4].x = 250;
-        list[5].x = 520;
-        list[6].x = 250;
-        list[7].x = 520;
-        list[0].y = 140;
-        list[1].y = 140;
-        list[2].y = 270;
-        list[3].y = 270;
-        list[4].y = 400;
-        list[5].y = 400;
-        list[6].y = 530;
-        list[7].y = 530;
+        sortingPopup.list[0].x = 250;
+        sortingPopup.list[1].x = 520;
+        sortingPopup.list[2].x = 250;
+        sortingPopup.list[3].x = 520;
+        sortingPopup.list[4].x = 250;
+        sortingPopup.list[5].x = 520;
+        sortingPopup.list[6].x = 250;
+        sortingPopup.list[7].x = 520;
+        sortingPopup.list[0].y = 140;
+        sortingPopup.list[1].y = 140;
+        sortingPopup.list[2].y = 270;
+        sortingPopup.list[3].y = 270;
+        sortingPopup.list[4].y = 400;
+        sortingPopup.list[5].y = 400;
+        sortingPopup.list[6].y = 530;
+        sortingPopup.list[7].y = 530;
         for (int i = 0; i < list.length; i++){
-          list[i].drawSmall(g);
+          sortingPopup.list[i].drawSmall(g);
           if (list[i].getClassification() == list[i].isCompostable()) {
             g.drawImage(right, list[i].x + 150, list[i].y + 24, this);
           }
@@ -139,8 +176,8 @@ public class Garden extends Home implements ActionListener{
       nextCycle.setVisible(false);
       endSummary.setVisible(true);
       for (int i = 0; i < list.length; i++) {
-        list[i].x = 320;
-        list[i].y = 180;
+        sortingPopup.list[i].x = 320;
+        sortingPopup.list[i].y = 180;
         // for (int r = 0; r < 40; r++){
         //   if (r == 1) {list[i].x = 320; list[i].y = 180;}
         //   if (r == 2) {list[i].x = 320; list[i].y = 180;}
@@ -190,8 +227,13 @@ public class Garden extends Home implements ActionListener{
       showSummary = false;
       endSummary.setVisible(false);
       nextCycle.setVisible(true);
-      sortingPopup.generateNewList();
-      sortingPopup.updateHomeList();
+      sortingPopup.list = new Item[8];
+              for(int i = 0; i < list.length; i++){
+              sortingPopup.list[i] = sortingPopup.randomItem();
+              }
+              sortingPopup.getList(list);
+      // sortingPopup.generateNewList();
+      // sortingPopup.updateHomeList();
       
     }
     buttonPressed++;

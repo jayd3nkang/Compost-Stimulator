@@ -27,7 +27,7 @@ public class strawberry extends Item implements Goods{
     }
 
     public void drawSmall(Graphics g){
-        ImageIcon object = new ImageIcon("strawerry.png");
+        ImageIcon object = new ImageIcon("strawberry.png");
         Image pic = object.getImage().getScaledInstance(99, 99, Image.SCALE_SMOOTH);
         object = new ImageIcon(pic, object.getDescription());
         // BufferedImage resized = new BufferedImage(50, 50, BufferedImage.TYPE_INT_RGB);
