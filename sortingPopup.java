@@ -29,34 +29,30 @@ public class sortingPopup extends Home implements ActionListener{
     FunFact factClass;
     FactToScreen fact;
 
+    //sets up the buttons, items, and facts
   public sortingPopup(JButton input, JButton input2){
     compostButton = input;
     trashButton = input2;
     counter = 0;
-
     factClass = new FunFact();
-
-
     ImageIcon compostIcon = new ImageIcon("compostButton.png");
     ImageIcon trashIcon = new ImageIcon("otherButton.png");
-
     compostButton.addActionListener(this);
     compostButton.setIcon(compostIcon);
     trashButton.addActionListener(this);
     trashButton.setIcon(trashIcon);
-
     this.setPreferredSize(new Dimension(800,600));
-
     list = new Item[8];
     for(int i = 0; i < list.length; i++){
       list[i] = randomItem();
     }
     Home.getList(list);
-
     Thread main = new Thread(new myRunnable());
     main.start();
   }
 
+  //constantly checks to see if user has sorted all the items in on given day 
+  //and changes/restarts few variables for the game to work next day
   public class myRunnable implements Runnable{
     public void run(){
         // every cycle, 8 items will need to be sorted
@@ -81,7 +77,7 @@ public class sortingPopup extends Home implements ActionListener{
      
   }
 
-
+  // randomly assigns an item
   public static Item randomItem(){
     int r = (int) (Math.random() * 40) + 1;
     // r = 30;
@@ -129,6 +125,7 @@ public class sortingPopup extends Home implements ActionListener{
     return i;
   }
 
+  //draws nescessary components for pop up screen
   public void paintComponent(Graphics g){
     g.setColor(new Color(241,246,220));
     g.fillRect(0, 0, 800, 800);
@@ -141,9 +138,10 @@ public class sortingPopup extends Home implements ActionListener{
     fact.paint(g);
   }
 
+  //checks which button to see which button player clicked on
+  //also changes the classification of item depending on the click 
   @Override
   public void actionPerformed(ActionEvent e) {
-    // TODO Auto-generated method stub
     if(e.getSource() == compostButton){
       list[counter].setClassification(1);
       factClass.newFact();
@@ -168,7 +166,7 @@ public class sortingPopup extends Home implements ActionListener{
     
    }
 
-
+   //creating class to draw the facts (from string to graphics)
    class FactToScreen{
     public int x;
     public int y;

@@ -105,6 +105,7 @@ public class Garden extends Home implements ActionListener{
         
       //depending on the progression, game draws different state of the flower
       //gives an windy (swinging) effect but progression does not affect the flower growth
+      //also shows the end of summary after sorting is done
       if(progression == 0){
         drawStageOne(g);
       }
@@ -158,7 +159,7 @@ public class Garden extends Home implements ActionListener{
           g.drawString(scores + " / 8", 680, 760);
       }
     }
-    //is next day button has been pressed 
+    //checks if the next day button has been pressed 
     //if true, then does multiple operations to prepare for the next cycle
   @Override
   public void actionPerformed(ActionEvent e) {

@@ -34,27 +34,27 @@ class MusicPlayer {
 }
 
 class Main extends JPanel {
-
-  // initiates all of the JFrames that show up for different parts of the game
   static JFrame frame = new JFrame();
   static JFrame pop = new JFrame();
   static JFrame garden = new JFrame();
   static Home ex;
   static boolean seeGarden;
   static JButton startButton = new JButton();
-  //static JButton button;
   public static void main(String[] args){
     
+    //setting up start button for home page
     seeGarden = false;
     startButton.setBorderPainted(false);
     startButton.setOpaque(false);
     startButton.setFocusable(false);
     startButton.setIcon(new ImageIcon("startButton.png"));
 
+    //setting up audio options for game
     String filePath = "childhood-afternoons-lloom-main-version-25583-03-11.wav";
     MusicPlayer play = new MusicPlayer();
     play.playMusic(filePath);
 
+    //starts the game up
     homeSetUp();
     while (!Home.cycleEnd){
       System.out.print("");
@@ -63,13 +63,12 @@ class Main extends JPanel {
 
     }
 
-    // public static void popupEnd(boolean popEnd){
-    //   pop.setVisible(!popEnd);
-    // }
+    //allows to change visibility of garden 
     public static void seeG(boolean seeGarden){
       garden.setVisible(seeGarden);
     }
-
+    
+    //setting up home
     public static void homeSetUp(){
       ex = new Home(pop, startButton);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,6 +79,7 @@ class Main extends JPanel {
       startButton.setBounds(425,500,200,100);
       frame.add(startButton);
     }
+    //setting up the popup screen 
     public static void popUpScreenSetUp(){
       JButton compostButton = new JButton();
       JButton trashButton = new JButton();
