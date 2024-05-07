@@ -166,7 +166,6 @@ public class Garden extends Home implements ActionListener{
     if(e.getSource() == nextCycle){
 
       sortingPopup.list[buttonPressed].changeLocation(1);
-      System.out.println("compost button clicked");
       seeGarden = false;
       Main.frame.setVisible(true);
       Main.seeG(seeGarden);
