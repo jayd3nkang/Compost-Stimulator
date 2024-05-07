@@ -13,13 +13,15 @@ public class flower extends Main{
     public int state;
 
     
-    
+    //sets ups up flower's initial x, y positions and state
     public flower(int ex, int why, int s){
         this.x = ex;
         this.y = why;
         this.state = s;
         
     }
+
+    //creating methods to draw srpout stages 
     public void drawSprout(Graphics g){
         ImageIcon plant = new ImageIcon("flower1(1).png");
         Image flower = plant.getImage();   
@@ -36,7 +38,7 @@ public class flower extends Main{
         g.drawImage(flower, x, y+200, this);
     }
 
-
+    //creating methods to draw blossoming stages 
     public void drawFlowerS2(Graphics g){
         ImageIcon plant = new ImageIcon("flower2(1).png");
         Image flower = plant.getImage();
@@ -55,7 +57,7 @@ public class flower extends Main{
     
 
 
-
+    //creating methods to draw almost fully blossomed stages 
     public void drawFlowerS3(Graphics g){
         ImageIcon plant = new ImageIcon("flower3(1).png");
         Image flower = plant.getImage();
@@ -73,6 +75,7 @@ public class flower extends Main{
     }
 
 
+    //creating methods to draw the one stage before a fully blossomed flower stages 
     public void drawFlowerS4(Graphics g){
         ImageIcon plant = new ImageIcon("flower4(1).png");
         Image flower = plant.getImage();
@@ -89,6 +92,7 @@ public class flower extends Main{
         g.drawImage(flower, x, y+30, this);
     }
 
+     //creating methods to draw the fully blossomed stages 
     public void drawHealthy(Graphics g){
         ImageIcon plant = new ImageIcon("flower5(1).png");
         Image flower = plant.getImage();   
@@ -105,7 +109,7 @@ public class flower extends Main{
         g.drawImage(flower, x, y+10, this);
     }
 
-
+    //creating methods to draw dead flower stages
     public void drawUnhealthy(Graphics g){
         ImageIcon plant = new ImageIcon("deadFlower(3).png");
         Image flower = plant.getImage();   

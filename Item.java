@@ -21,28 +21,25 @@ public  class Item extends Main{
     // p for preferred location to see if the actual location is the same as the preferred location (compost or trash)
     public int p = 0;
 
+    //Every subclass of Item is an item that can be compostable or not
     public int isCompostable(){
         return 0;
     }
+    //changes the classification (depending on the button pressed and it's own value of isCompostable)
     public void setClassification(int c){
     }
+    //returns what the classification Item has been assigned
     public int getClassification(){
         return -1;
     }
     // draw method will be different for every object
     public void draw(Graphics g){
     }
+    //draw a smaller of the item
     public void drawSmall(Graphics g){
         
     }
-    // default is false but each object can have its own compostability
-    // public void isCompostable(){
-    //     // 0 means its not compostable, 1 means it is compostable
-    //     // later on we can use this to check if object location matches its preferred location (i.e. l=0 and p=0) to see if the
-    //     // player is doing well. we can take this further and determine use the ratio of items overall sorted correctly rather than 
-    //     // updating every time an item is sorted (check the whole array of items).
-    //     this.p = 0;
-    // }
+    //changes the location of the item
     public void changeLocation(int loc){
         this.l = loc;
     }
